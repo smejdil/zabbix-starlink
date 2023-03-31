@@ -1,6 +1,6 @@
 zabbix_export:
   version: '6.0'
-  date: '2023-03-24T21:11:08Z'
+  date: '2023-03-31T10:04:13Z'
   groups:
     -
       uuid: 7df96b18c230490a9a0a9e2307226338
@@ -10,7 +10,13 @@ zabbix_export:
       uuid: 2c75611870674709ba210e8c957083f6
       template: 'Starlink dish by Prom'
       name: 'Starlink dish by Prom'
-      description: 'Use: https://github.com/sparky8512/starlink-grpc-tools'
+      description: |
+        Use project Python starlink-grpc-tools
+        
+        https://github.com/sparky8512/starlink-grpc-tools
+        
+        Run Starlink exporter:
+        python dish_grpc_prometheus.py status
       groups:
         -
           name: Templates

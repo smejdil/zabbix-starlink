@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <zabbix_export>
     <version>6.0</version>
-    <date>2023-03-24T21:11:10Z</date>
+    <date>2023-03-31T10:04:16Z</date>
     <groups>
         <group>
             <uuid>7df96b18c230490a9a0a9e2307226338</uuid>
@@ -13,7 +13,12 @@
             <uuid>2c75611870674709ba210e8c957083f6</uuid>
             <template>Starlink dish by Prom</template>
             <name>Starlink dish by Prom</name>
-            <description>Use: https://github.com/sparky8512/starlink-grpc-tools</description>
+            <description>Use project Python starlink-grpc-tools
+
+https://github.com/sparky8512/starlink-grpc-tools
+
+Run Starlink exporter:
+python dish_grpc_prometheus.py status</description>
             <groups>
                 <group>
                     <name>Templates</name>
