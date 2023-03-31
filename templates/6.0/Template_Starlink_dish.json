@@ -1,0 +1,716 @@
+{
+    "zabbix_export": {
+        "version": "6.0",
+        "date": "2023-03-24T21:11:12Z",
+        "groups": [
+            {
+                "uuid": "7df96b18c230490a9a0a9e2307226338",
+                "name": "Templates"
+            }
+        ],
+        "templates": [
+            {
+                "uuid": "2c75611870674709ba210e8c957083f6",
+                "template": "Starlink dish by Prom",
+                "name": "Starlink dish by Prom",
+                "description": "Use: https://github.com/sparky8512/starlink-grpc-tools",
+                "groups": [
+                    {
+                        "name": "Templates"
+                    }
+                ],
+                "items": [
+                    {
+                        "uuid": "27f9be01621d4ffeaedd31392399eb46",
+                        "name": "Starlink alerts",
+                        "type": "DEPENDENT",
+                        "key": "starlink.alerts",
+                        "delay": "0",
+                        "value_type": "FLOAT",
+                        "preprocessing": [
+                            {
+                                "type": "PROMETHEUS_PATTERN",
+                                "parameters": [
+                                    "{__name__=~\"^starlink_status_alerts\"}",
+                                    "value",
+                                    ""
+                                ]
+                            }
+                        ],
+                        "master_item": {
+                            "key": "zbx.starlink.dish.data"
+                        },
+                        "tags": [
+                            {
+                                "tag": "component",
+                                "value": "starlink"
+                            },
+                            {
+                                "tag": "scope",
+                                "value": "alert"
+                            }
+                        ]
+                    },
+                    {
+                        "uuid": "aee4b9a101634d26ac846270bf70028f",
+                        "name": "Starlink currently obstructed",
+                        "type": "DEPENDENT",
+                        "key": "starlink.currently_obstructed",
+                        "delay": "0",
+                        "value_type": "FLOAT",
+                        "preprocessing": [
+                            {
+                                "type": "PROMETHEUS_PATTERN",
+                                "parameters": [
+                                    "{__name__=~\"^starlink_status_currently_obstructed\"}",
+                                    "value",
+                                    ""
+                                ]
+                            }
+                        ],
+                        "master_item": {
+                            "key": "zbx.starlink.dish.data"
+                        },
+                        "tags": [
+                            {
+                                "tag": "component",
+                                "value": "starlink"
+                            },
+                            {
+                                "tag": "scope",
+                                "value": "obstructed"
+                            }
+                        ]
+                    },
+                    {
+                        "uuid": "bd87eeb661c946618c3eeff1096c1639",
+                        "name": "Starlink direction azimuth",
+                        "type": "DEPENDENT",
+                        "key": "starlink.direction_azimuth",
+                        "delay": "0",
+                        "value_type": "FLOAT",
+                        "preprocessing": [
+                            {
+                                "type": "PROMETHEUS_PATTERN",
+                                "parameters": [
+                                    "{__name__=~\"^starlink_status_direction_azimuth\"}",
+                                    "value",
+                                    ""
+                                ]
+                            }
+                        ],
+                        "master_item": {
+                            "key": "zbx.starlink.dish.data"
+                        },
+                        "tags": [
+                            {
+                                "tag": "component",
+                                "value": "starlink"
+                            }
+                        ]
+                    },
+                    {
+                        "uuid": "9d16c1537b824e5ab28d745e83e3e3cf",
+                        "name": "Starlink direction elevation",
+                        "type": "DEPENDENT",
+                        "key": "starlink.direction_elevation",
+                        "delay": "0",
+                        "value_type": "FLOAT",
+                        "preprocessing": [
+                            {
+                                "type": "PROMETHEUS_PATTERN",
+                                "parameters": [
+                                    "{__name__=~\"^starlink_status_direction_elevation\"}",
+                                    "value",
+                                    ""
+                                ]
+                            }
+                        ],
+                        "master_item": {
+                            "key": "zbx.starlink.dish.data"
+                        },
+                        "tags": [
+                            {
+                                "tag": "component",
+                                "value": "starlink"
+                            }
+                        ]
+                    },
+                    {
+                        "uuid": "b9b4ad23a2ba466285883ecb26e47952",
+                        "name": "Starlink downlink throughput bps",
+                        "type": "DEPENDENT",
+                        "key": "starlink.downlink",
+                        "delay": "0",
+                        "value_type": "FLOAT",
+                        "units": "bps",
+                        "preprocessing": [
+                            {
+                                "type": "PROMETHEUS_PATTERN",
+                                "parameters": [
+                                    "{__name__=~\"^starlink_status_downlink_throughput_bps\"}",
+                                    "value",
+                                    ""
+                                ]
+                            }
+                        ],
+                        "master_item": {
+                            "key": "zbx.starlink.dish.data"
+                        },
+                        "tags": [
+                            {
+                                "tag": "component",
+                                "value": "starlink"
+                            },
+                            {
+                                "tag": "scope",
+                                "value": "traffic"
+                            }
+                        ]
+                    },
+                    {
+                        "uuid": "c4ddfdfd420e4d559b785e57be99332f",
+                        "name": "Starlink fraction obstructed",
+                        "type": "DEPENDENT",
+                        "key": "starlink.fraction_obstructed",
+                        "delay": "0",
+                        "value_type": "FLOAT",
+                        "preprocessing": [
+                            {
+                                "type": "PROMETHEUS_PATTERN",
+                                "parameters": [
+                                    "{__name__=~\"^starlink_status_fraction_obstructed\"}",
+                                    "value",
+                                    ""
+                                ]
+                            }
+                        ],
+                        "master_item": {
+                            "key": "zbx.starlink.dish.data"
+                        },
+                        "tags": [
+                            {
+                                "tag": "component",
+                                "value": "starlink"
+                            },
+                            {
+                                "tag": "scope",
+                                "value": "obstructed"
+                            }
+                        ]
+                    },
+                    {
+                        "uuid": "b53ab807fb414ac8b01d584119da17d1",
+                        "name": "Starlink hardware version",
+                        "type": "DEPENDENT",
+                        "key": "starlink.hardware_version",
+                        "delay": "0",
+                        "trends": "0",
+                        "value_type": "CHAR",
+                        "preprocessing": [
+                            {
+                                "type": "PROMETHEUS_PATTERN",
+                                "parameters": [
+                                    "starlink_info",
+                                    "label",
+                                    "hardware_version"
+                                ]
+                            }
+                        ],
+                        "master_item": {
+                            "key": "zbx.starlink.dish.data"
+                        },
+                        "tags": [
+                            {
+                                "tag": "component",
+                                "value": "starlink"
+                            }
+                        ]
+                    },
+                    {
+                        "uuid": "e1723ae4f1cb419e8a47bd9089e7aef4",
+                        "name": "Starlink ID",
+                        "type": "DEPENDENT",
+                        "key": "starlink.id",
+                        "delay": "0",
+                        "trends": "0",
+                        "value_type": "CHAR",
+                        "preprocessing": [
+                            {
+                                "type": "PROMETHEUS_PATTERN",
+                                "parameters": [
+                                    "starlink_info",
+                                    "label",
+                                    "id"
+                                ]
+                            }
+                        ],
+                        "master_item": {
+                            "key": "zbx.starlink.dish.data"
+                        },
+                        "tags": [
+                            {
+                                "tag": "component",
+                                "value": "starlink"
+                            }
+                        ]
+                    },
+                    {
+                        "uuid": "f45f0c1dede14a5f9d1ed3dff2e59374",
+                        "name": "Starlink obstruction duration",
+                        "type": "DEPENDENT",
+                        "key": "starlink.obstruction_duration",
+                        "delay": "0",
+                        "value_type": "FLOAT",
+                        "preprocessing": [
+                            {
+                                "type": "PROMETHEUS_PATTERN",
+                                "parameters": [
+                                    "{__name__=~\"^starlink_status_obstruction_duration\"}",
+                                    "value",
+                                    ""
+                                ]
+                            }
+                        ],
+                        "master_item": {
+                            "key": "zbx.starlink.dish.data"
+                        },
+                        "tags": [
+                            {
+                                "tag": "component",
+                                "value": "starlink"
+                            }
+                        ]
+                    },
+                    {
+                        "uuid": "b1bc340d17fe4a99b870c99740af08da",
+                        "name": "Starlink obstruction interval",
+                        "type": "DEPENDENT",
+                        "key": "starlink.obstruction_interval",
+                        "delay": "0",
+                        "value_type": "FLOAT",
+                        "preprocessing": [
+                            {
+                                "type": "PROMETHEUS_PATTERN",
+                                "parameters": [
+                                    "{__name__=~\"^starlink_status_obstruction_interval\"}",
+                                    "value",
+                                    ""
+                                ]
+                            }
+                        ],
+                        "master_item": {
+                            "key": "zbx.starlink.dish.data"
+                        },
+                        "tags": [
+                            {
+                                "tag": "component",
+                                "value": "starlink"
+                            }
+                        ]
+                    },
+                    {
+                        "uuid": "3cc132df7ccc4417b92d63bd950245e5",
+                        "name": "Starlink ping latency",
+                        "type": "DEPENDENT",
+                        "key": "starlink.ping.latency",
+                        "delay": "0",
+                        "value_type": "FLOAT",
+                        "preprocessing": [
+                            {
+                                "type": "PROMETHEUS_PATTERN",
+                                "parameters": [
+                                    "{__name__=~\"^starlink_status_pop_ping_latency_ms(?:_seconds)?$\"}",
+                                    "value",
+                                    ""
+                                ]
+                            }
+                        ],
+                        "master_item": {
+                            "key": "zbx.starlink.dish.data"
+                        },
+                        "tags": [
+                            {
+                                "tag": "component",
+                                "value": "starlink"
+                            },
+                            {
+                                "tag": "scope",
+                                "value": "ping"
+                            }
+                        ]
+                    },
+                    {
+                        "uuid": "08516643abe04177901dbc86c273e00e",
+                        "name": "Starlink pop ping drop rate",
+                        "type": "DEPENDENT",
+                        "key": "starlink.pop.ping.drop_rate",
+                        "delay": "0",
+                        "value_type": "FLOAT",
+                        "preprocessing": [
+                            {
+                                "type": "PROMETHEUS_PATTERN",
+                                "parameters": [
+                                    "{__name__=~\"^starlink_status_pop_ping_drop_rate(?:_seconds)?$\"}",
+                                    "value",
+                                    ""
+                                ]
+                            }
+                        ],
+                        "master_item": {
+                            "key": "zbx.starlink.dish.data"
+                        },
+                        "tags": [
+                            {
+                                "tag": "component",
+                                "value": "starlink"
+                            },
+                            {
+                                "tag": "scope",
+                                "value": "ping"
+                            }
+                        ]
+                    },
+                    {
+                        "uuid": "268dce0d2f2646b38f5358ff7be357bb",
+                        "name": "Starlink seconds to first nonempty slot",
+                        "type": "DEPENDENT",
+                        "key": "starlink.seconds.to.first.nonempty_slot",
+                        "delay": "0",
+                        "value_type": "FLOAT",
+                        "preprocessing": [
+                            {
+                                "type": "PROMETHEUS_PATTERN",
+                                "parameters": [
+                                    "{__name__=~\"^starlink_status_seconds_to_first_nonempty_slot\"}",
+                                    "value",
+                                    ""
+                                ]
+                            }
+                        ],
+                        "master_item": {
+                            "key": "zbx.starlink.dish.data"
+                        },
+                        "tags": [
+                            {
+                                "tag": "component",
+                                "value": "starlink"
+                            }
+                        ]
+                    },
+                    {
+                        "uuid": "14612bedfb69496791e03cf6343207b2",
+                        "name": "Starlink seconds obstructed",
+                        "type": "DEPENDENT",
+                        "key": "starlink.seconds_obstructed",
+                        "delay": "0",
+                        "value_type": "FLOAT",
+                        "preprocessing": [
+                            {
+                                "type": "PROMETHEUS_PATTERN",
+                                "parameters": [
+                                    "{__name__=~\"^starlink_status_seconds_obstructed\"}",
+                                    "value",
+                                    ""
+                                ]
+                            }
+                        ],
+                        "master_item": {
+                            "key": "zbx.starlink.dish.data"
+                        },
+                        "tags": [
+                            {
+                                "tag": "component",
+                                "value": "starlink"
+                            },
+                            {
+                                "tag": "scope",
+                                "value": "obstructed"
+                            }
+                        ]
+                    },
+                    {
+                        "uuid": "dbcfb003296c4b248badf76811d217ca",
+                        "name": "Starlink snr above noise floor",
+                        "type": "DEPENDENT",
+                        "key": "starlink.snr_above_noise_floor",
+                        "delay": "0",
+                        "value_type": "FLOAT",
+                        "preprocessing": [
+                            {
+                                "type": "PROMETHEUS_PATTERN",
+                                "parameters": [
+                                    "{__name__=~\"^starlink_status_is_snr_above_noise_floor\"}",
+                                    "value",
+                                    ""
+                                ]
+                            }
+                        ],
+                        "master_item": {
+                            "key": "zbx.starlink.dish.data"
+                        },
+                        "tags": [
+                            {
+                                "tag": "component",
+                                "value": "starlink"
+                            }
+                        ]
+                    },
+                    {
+                        "uuid": "7666cf7c739f45d184ee9b42ec63a2a8",
+                        "name": "Starlink software version",
+                        "type": "DEPENDENT",
+                        "key": "starlink.software_version",
+                        "delay": "0",
+                        "trends": "0",
+                        "value_type": "CHAR",
+                        "preprocessing": [
+                            {
+                                "type": "PROMETHEUS_PATTERN",
+                                "parameters": [
+                                    "starlink_info",
+                                    "label",
+                                    "software_version"
+                                ]
+                            }
+                        ],
+                        "master_item": {
+                            "key": "zbx.starlink.dish.data"
+                        },
+                        "tags": [
+                            {
+                                "tag": "component",
+                                "value": "starlink"
+                            }
+                        ],
+                        "triggers": [
+                            {
+                                "uuid": "c715d49e3d9f44a5bf4815eeac1ace47",
+                                "expression": "change(/Starlink dish by Prom/starlink.software_version)<0",
+                                "name": "Starlink firmware version changed",
+                                "priority": "INFO",
+                                "manual_close": "YES",
+                                "tags": [
+                                    {
+                                        "tag": "scope",
+                                        "value": "firmware"
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "uuid": "db9c36209f964a0ab3272bdd898cd6c8",
+                        "name": "Starlink state",
+                        "type": "DEPENDENT",
+                        "key": "starlink.state",
+                        "delay": "0",
+                        "trends": "0",
+                        "value_type": "CHAR",
+                        "preprocessing": [
+                            {
+                                "type": "PROMETHEUS_PATTERN",
+                                "parameters": [
+                                    "starlink_status_state{state=~\".*\"}==1",
+                                    "label",
+                                    "state"
+                                ]
+                            }
+                        ],
+                        "master_item": {
+                            "key": "zbx.starlink.dish.data"
+                        },
+                        "tags": [
+                            {
+                                "tag": "component",
+                                "value": "starlink"
+                            }
+                        ],
+                        "triggers": [
+                            {
+                                "uuid": "33c8cef89101407bbc7786ebe75be9d6",
+                                "expression": "change(/Starlink dish by Prom/starlink.state)<0",
+                                "name": "Starlink status changed",
+                                "priority": "AVERAGE",
+                                "manual_close": "YES",
+                                "tags": [
+                                    {
+                                        "tag": "scope",
+                                        "value": "firmware"
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "uuid": "c59844a960d34e65acff697e88ce3892",
+                        "name": "Starlink uplink throughput bps",
+                        "type": "DEPENDENT",
+                        "key": "starlink.uplink",
+                        "delay": "0",
+                        "value_type": "FLOAT",
+                        "units": "bps",
+                        "preprocessing": [
+                            {
+                                "type": "PROMETHEUS_PATTERN",
+                                "parameters": [
+                                    "{__name__=~\"^starlink_status_uplink_throughput_bps\"}",
+                                    "value",
+                                    ""
+                                ]
+                            }
+                        ],
+                        "master_item": {
+                            "key": "zbx.starlink.dish.data"
+                        },
+                        "tags": [
+                            {
+                                "tag": "component",
+                                "value": "starlink"
+                            },
+                            {
+                                "tag": "scope",
+                                "value": "traffic"
+                            }
+                        ]
+                    },
+                    {
+                        "uuid": "75d0a6efe23f44e3aff3b8edfedaa1eb",
+                        "name": "Starlink uptime",
+                        "type": "DEPENDENT",
+                        "key": "starlink.uptime",
+                        "delay": "0",
+                        "value_type": "FLOAT",
+                        "units": "uptime",
+                        "description": "Starlink uptime in 'N days, hh:mm:ss' format.",
+                        "preprocessing": [
+                            {
+                                "type": "PROMETHEUS_PATTERN",
+                                "parameters": [
+                                    "{__name__=~\"^starlink_status_uptime_seconds(?:_seconds)?$\"}",
+                                    "value",
+                                    ""
+                                ]
+                            }
+                        ],
+                        "master_item": {
+                            "key": "zbx.starlink.dish.data"
+                        },
+                        "tags": [
+                            {
+                                "tag": "component",
+                                "value": "starlink"
+                            }
+                        ]
+                    },
+                    {
+                        "uuid": "a4a9e76ce6f446588fbaf02a1a79e982",
+                        "name": "Starlink: Get dish data",
+                        "type": "HTTP_AGENT",
+                        "key": "zbx.starlink.dish.data",
+                        "history": "0",
+                        "trends": "0",
+                        "value_type": "TEXT",
+                        "url": "{$STARLINK.SCHEME}://{HOST.CONN}:{$STARLINK.PORT}/metrics",
+                        "tags": [
+                            {
+                                "tag": "component",
+                                "value": "raw"
+                            }
+                        ],
+                        "triggers": [
+                            {
+                                "uuid": "e4115cfa84c5417eb345ec53cd475f76",
+                                "expression": "nodata(/Starlink dish by Prom/zbx.starlink.dish.data,30)=1",
+                                "name": "starlink_exporter is not available (or no data for 30m)",
+                                "priority": "WARNING",
+                                "description": "Failed to fetch starlink metrics from starlink_exporter in time.",
+                                "manual_close": "YES",
+                                "tags": [
+                                    {
+                                        "tag": "scope",
+                                        "value": "availability"
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ],
+                "tags": [
+                    {
+                        "tag": "class",
+                        "value": "hardware"
+                    },
+                    {
+                        "tag": "target",
+                        "value": "starlink"
+                    }
+                ],
+                "macros": [
+                    {
+                        "macro": "{$STARLINK.PORT}",
+                        "value": "8080"
+                    },
+                    {
+                        "macro": "{$STARLINK.SCHEME}",
+                        "value": "http"
+                    }
+                ],
+                "dashboards": [
+                    {
+                        "uuid": "a6cf7fff77da4cb1b59bddc5a5f6f499",
+                        "name": "Starlink traffic",
+                        "pages": [
+                            {
+                                "widgets": [
+                                    {
+                                        "type": "GRAPH_CLASSIC",
+                                        "width": "24",
+                                        "height": "7",
+                                        "fields": [
+                                            {
+                                                "type": "GRAPH",
+                                                "name": "graphid",
+                                                "value": {
+                                                    "host": "Starlink dish by Prom",
+                                                    "name": "Starlink traffic"
+                                                }
+                                            }
+                                        ]
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            }
+        ],
+        "graphs": [
+            {
+                "uuid": "72bf0eb753664ddea0ad5191cc7d5f7a",
+                "name": "Starlink traffic",
+                "graph_items": [
+                    {
+                        "drawtype": "FILLED_REGION",
+                        "color": "199C0D",
+                        "calc_fnc": "ALL",
+                        "item": {
+                            "host": "Starlink dish by Prom",
+                            "key": "starlink.downlink"
+                        }
+                    },
+                    {
+                        "sortorder": "1",
+                        "drawtype": "FILLED_REGION",
+                        "color": "0040FF",
+                        "calc_fnc": "ALL",
+                        "item": {
+                            "host": "Starlink dish by Prom",
+                            "key": "starlink.uplink"
+                        }
+                    }
+                ]
+            }
+        ]
+    }
+}
