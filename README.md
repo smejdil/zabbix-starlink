@@ -4,9 +4,6 @@ Monitoring Starlink Dish by [gRPC](https://grpc.io/) and Python project [starlin
 
 ### Tested on FreeBSD
 
-py39-grpcio-1.52.0             HTTP/2-based RPC framework
-py39-grpcio-tools-1.52.0       Protobuf code generator for gRPC
-
 - Package - py39-grpcio-1.52.0		HTTP/2-based RPC framework
 - Package - py39-grpcio-tools-1.52.0	Protobuf code generator for gRPC
 
