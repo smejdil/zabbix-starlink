@@ -1,13 +1,13 @@
 zabbix_export:
   version: '6.0'
-  date: '2023-03-31T10:04:13Z'
+  date: '2023-04-05T08:58:17Z'
   groups:
     -
-      uuid: 7df96b18c230490a9a0a9e2307226338
-      name: Templates
+      uuid: 75462cf1d1644578998103ea76f45b16
+      name: Templates/Open-Tech
   templates:
     -
-      uuid: 2c75611870674709ba210e8c957083f6
+      uuid: 34fe31ea9f4a4c4c9108a25bab9a6496
       template: 'Starlink dish by Prom'
       name: 'Starlink dish by Prom'
       description: |
@@ -19,10 +19,10 @@ zabbix_export:
         python dish_grpc_prometheus.py status
       groups:
         -
-          name: Templates
+          name: Templates/Open-Tech
       items:
         -
-          uuid: 27f9be01621d4ffeaedd31392399eb46
+          uuid: f92e9d4a724d4d3db3f886e159829985
           name: 'Starlink alerts'
           type: DEPENDENT
           key: starlink.alerts
@@ -44,8 +44,21 @@ zabbix_export:
             -
               tag: scope
               value: alert
+          triggers:
+            -
+              uuid: e037f5104eab42b4bc295745564b4125
+              expression: 'last(/Starlink dish by Prom/starlink.alerts,#3)=128'
+              name: 'Starlink alert install pending'
+              opdata: 'Current value: {ITEM.LASTVALUE1}'
+              priority: INFO
+              description: 'Starlink alert install pending. Ack to close'
+              manual_close: 'YES'
+              tags:
+                -
+                  tag: scope
+                  value: notice
         -
-          uuid: aee4b9a101634d26ac846270bf70028f
+          uuid: b0dac1b1955d4b5ebd8796e0539ce645
           name: 'Starlink currently obstructed'
           type: DEPENDENT
           key: starlink.currently_obstructed
@@ -68,7 +81,7 @@ zabbix_export:
               tag: scope
               value: obstructed
         -
-          uuid: bd87eeb661c946618c3eeff1096c1639
+          uuid: 304b25f054c34d3dbededb09681b3e3b
           name: 'Starlink direction azimuth'
           type: DEPENDENT
           key: starlink.direction_azimuth
@@ -88,7 +101,7 @@ zabbix_export:
               tag: component
               value: starlink
         -
-          uuid: 9d16c1537b824e5ab28d745e83e3e3cf
+          uuid: eb1954e0502f4647b8f9a6b7c7c94fcf
           name: 'Starlink direction elevation'
           type: DEPENDENT
           key: starlink.direction_elevation
@@ -108,7 +121,7 @@ zabbix_export:
               tag: component
               value: starlink
         -
-          uuid: b9b4ad23a2ba466285883ecb26e47952
+          uuid: 6cd97913ed1e458db24dc9f396f7149b
           name: 'Starlink downlink throughput bps'
           type: DEPENDENT
           key: starlink.downlink
@@ -132,7 +145,7 @@ zabbix_export:
               tag: scope
               value: traffic
         -
-          uuid: c4ddfdfd420e4d559b785e57be99332f
+          uuid: 94a989ad80bb403b9459a20552b8f4d2
           name: 'Starlink fraction obstructed'
           type: DEPENDENT
           key: starlink.fraction_obstructed
@@ -155,7 +168,7 @@ zabbix_export:
               tag: scope
               value: obstructed
         -
-          uuid: b53ab807fb414ac8b01d584119da17d1
+          uuid: af1d33184f924b2f903507602ee2e779
           name: 'Starlink hardware version'
           type: DEPENDENT
           key: starlink.hardware_version
@@ -176,7 +189,7 @@ zabbix_export:
               tag: component
               value: starlink
         -
-          uuid: e1723ae4f1cb419e8a47bd9089e7aef4
+          uuid: 8bd3039a86344dadb31f4c7d91897f6c
           name: 'Starlink ID'
           type: DEPENDENT
           key: starlink.id
@@ -197,7 +210,7 @@ zabbix_export:
               tag: component
               value: starlink
         -
-          uuid: f45f0c1dede14a5f9d1ed3dff2e59374
+          uuid: 2dc68f7b12394d30972ee5289e3f995d
           name: 'Starlink obstruction duration'
           type: DEPENDENT
           key: starlink.obstruction_duration
@@ -217,7 +230,7 @@ zabbix_export:
               tag: component
               value: starlink
         -
-          uuid: b1bc340d17fe4a99b870c99740af08da
+          uuid: 151c8ac1204b484b827bb9e802cd0c12
           name: 'Starlink obstruction interval'
           type: DEPENDENT
           key: starlink.obstruction_interval
@@ -237,7 +250,7 @@ zabbix_export:
               tag: component
               value: starlink
         -
-          uuid: 3cc132df7ccc4417b92d63bd950245e5
+          uuid: 044d5748016d40d7bd6b567e0d40f191
           name: 'Starlink ping latency'
           type: DEPENDENT
           key: starlink.ping.latency
@@ -260,7 +273,7 @@ zabbix_export:
               tag: scope
               value: ping
         -
-          uuid: 08516643abe04177901dbc86c273e00e
+          uuid: 3931699111354670bf98ba905b22ba07
           name: 'Starlink pop ping drop rate'
           type: DEPENDENT
           key: starlink.pop.ping.drop_rate
@@ -283,7 +296,7 @@ zabbix_export:
               tag: scope
               value: ping
         -
-          uuid: 268dce0d2f2646b38f5358ff7be357bb
+          uuid: 038a0047c8ff42d893ee819688387cf6
           name: 'Starlink seconds to first nonempty slot'
           type: DEPENDENT
           key: starlink.seconds.to.first.nonempty_slot
@@ -303,7 +316,7 @@ zabbix_export:
               tag: component
               value: starlink
         -
-          uuid: 14612bedfb69496791e03cf6343207b2
+          uuid: 605d50f7dd724ad9911d065c525fb684
           name: 'Starlink seconds obstructed'
           type: DEPENDENT
           key: starlink.seconds_obstructed
@@ -326,7 +339,7 @@ zabbix_export:
               tag: scope
               value: obstructed
         -
-          uuid: dbcfb003296c4b248badf76811d217ca
+          uuid: 60aab4d771794465a0074d7e7b5df9fa
           name: 'Starlink snr above noise floor'
           type: DEPENDENT
           key: starlink.snr_above_noise_floor
@@ -346,7 +359,7 @@ zabbix_export:
               tag: component
               value: starlink
         -
-          uuid: 7666cf7c739f45d184ee9b42ec63a2a8
+          uuid: 250ab23f912a4aeeaca573b23e7f4025
           name: 'Starlink software version'
           type: DEPENDENT
           key: starlink.software_version
@@ -368,17 +381,22 @@ zabbix_export:
               value: starlink
           triggers:
             -
-              uuid: c715d49e3d9f44a5bf4815eeac1ace47
-              expression: 'change(/Starlink dish by Prom/starlink.software_version)<0'
-              name: 'Starlink firmware version changed'
+              uuid: f3f72018b726451a92e3c0b7a5742e61
+              expression: 'last(/Starlink dish by Prom/starlink.software_version,#1)<>last(/Starlink dish by Prom/starlink.software_version,#2) and length(last(/Starlink dish by Prom/starlink.software_version))>0'
+              name: 'Starlink firmware has changed'
+              opdata: 'Current value: {ITEM.LASTVALUE1}'
               priority: INFO
+              description: 'Firmware version has changed. Ack to close'
               manual_close: 'YES'
               tags:
                 -
                   tag: scope
                   value: firmware
+                -
+                  tag: scope
+                  value: notice
         -
-          uuid: db9c36209f964a0ab3272bdd898cd6c8
+          uuid: 8c02f45b1dea41e7b8c488c3f137aaa3
           name: 'Starlink state'
           type: DEPENDENT
           key: starlink.state
@@ -400,17 +418,19 @@ zabbix_export:
               value: starlink
           triggers:
             -
-              uuid: 33c8cef89101407bbc7786ebe75be9d6
-              expression: 'change(/Starlink dish by Prom/starlink.state)<0'
-              name: 'Starlink status changed'
+              uuid: 18cde597443e408c9c0f0a872e20f030
+              expression: 'last(/Starlink dish by Prom/starlink.state,#1)<>last(/Starlink dish by Prom/starlink.state,#2) and length(last(/Starlink dish by Prom/starlink.state))>0'
+              name: 'Starlink status has changed'
+              opdata: 'Current value: {ITEM.LASTVALUE1}'
               priority: AVERAGE
+              description: 'Status has changed. Ack to close'
               manual_close: 'YES'
               tags:
                 -
                   tag: scope
-                  value: firmware
+                  value: status
         -
-          uuid: c59844a960d34e65acff697e88ce3892
+          uuid: 433d7c0358444aef8b8389eeaa670cdb
           name: 'Starlink uplink throughput bps'
           type: DEPENDENT
           key: starlink.uplink
@@ -434,7 +454,7 @@ zabbix_export:
               tag: scope
               value: traffic
         -
-          uuid: 75d0a6efe23f44e3aff3b8edfedaa1eb
+          uuid: e2adf9f168cf4780ba874b98cc248718
           name: 'Starlink uptime'
           type: DEPENDENT
           key: starlink.uptime
@@ -455,8 +475,20 @@ zabbix_export:
             -
               tag: component
               value: starlink
+          triggers:
+            -
+              uuid: cb30b86dc73e46979425c99b5475e281
+              expression: 'last(/Starlink dish by Prom/starlink.uptime)<10m'
+              name: '{HOST.NAME} has been restarted (uptime < 10m)'
+              priority: WARNING
+              description: 'Uptime is less than 10 minutes'
+              manual_close: 'YES'
+              tags:
+                -
+                  tag: scope
+                  value: notice
         -
-          uuid: a4a9e76ce6f446588fbaf02a1a79e982
+          uuid: e999c02c61d3489194b011fdb9af9cb3
           name: 'Starlink: Get dish data'
           type: HTTP_AGENT
           key: zbx.starlink.dish.data
@@ -470,7 +502,7 @@ zabbix_export:
               value: raw
           triggers:
             -
-              uuid: e4115cfa84c5417eb345ec53cd475f76
+              uuid: e9257e8f2bc64765a2cfcee60b298695
               expression: 'nodata(/Starlink dish by Prom/zbx.starlink.dish.data,30)=1'
               name: 'starlink_exporter is not available (or no data for 30m)'
               priority: WARNING
@@ -496,7 +528,7 @@ zabbix_export:
           value: http
       dashboards:
         -
-          uuid: a6cf7fff77da4cb1b59bddc5a5f6f499
+          uuid: e820ec353f0741a0b379e6e1d6916f09
           name: 'Starlink traffic'
           pages:
             -
@@ -514,7 +546,7 @@ zabbix_export:
                         name: 'Starlink traffic'
   graphs:
     -
-      uuid: 72bf0eb753664ddea0ad5191cc7d5f7a
+      uuid: 9b23b40ec0cc4632afc10e70a3e70cfe
       name: 'Starlink traffic'
       graph_items:
         -
