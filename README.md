@@ -40,3 +40,5 @@ cd /root/starlink-grpc-tools
 ### To do
 
 - Run in Jail or Docker
+- Make template for https://github.com/ewilken/starlink-exporter
+- Make template for https://github.com/sysdigdan/starlink_exporter
