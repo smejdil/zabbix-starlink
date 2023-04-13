@@ -45,6 +45,17 @@ docker run -d -t -p 8080:8080 --name='starlink-grpc-tools' starlink-grpc-tools
 curl 127.0.0.1:8080
 ```
 
+### Running docker container by SystemD
+
+```console
+cp docker.starlink-grpc-tools.service /etc/systemd/system/
+systemctl daemon-reload
+systemctl enable docker.starlink-grpc-tools.service
+systemctl restart docker.starlink-grpc-tools.service
+
+curl 127.0.0.1:8080
+```
+
 ### Images
 
 ![Zabbix Starlink Detail](./images/Zabbix-Starlink-Detail.png)
