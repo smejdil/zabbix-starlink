@@ -12,7 +12,7 @@ Monitoring Starlink Dish by [gRPC](https://grpc.io/) and Python project [starlin
 Python projects by gRPC connect to Dish and read information. Result is by
 Prometeus format. Zabbix read URL - {$STARLINK.SCHEME}://{HOST.CONN}:{$STARLINK.PORT}/metrics.
 
-### Run on FreeBSD in Screen
+### Running on FreeBSD in Screen
 
 ```console
 function exec_in_screen() {
@@ -29,6 +29,20 @@ cat /usr/local/bin/exporter_starlink.sh
 
 cd /root/starlink-grpc-tools
 /usr/local/bin/python3.9 dish_grpc_prometheus.py status
+```
+
+### Running with Docker
+
+```console
+git clone https://github.com/sparky8512/starlink-grpc-tools && cd starlink-grpc-tools
+cp ../zabbix-starlink/Dockerfile.patch ./
+patch < Dockerfile.patch 
+patching file Dockerfile-inst
+
+docker build -t starlink-grpc-tools .
+docker run -d -t -p 8080:8080 --name='starlink-grpc-tools' starlink-grpc-tools
+
+curl 127.0.0.1:8080
 ```
 
 ### Images
