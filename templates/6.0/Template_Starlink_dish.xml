@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <zabbix_export>
     <version>6.0</version>
-    <date>2023-04-05T10:01:58Z</date>
+    <date>2023-04-13T08:27:04Z</date>
     <groups>
         <group>
             <uuid>7df96b18c230490a9a0a9e2307226338</uuid>
@@ -10,7 +10,7 @@
     </groups>
     <templates>
         <template>
-            <uuid>8414eebc3e3447eb82cf2c4f630b3a23</uuid>
+            <uuid>68ad921d58194cd99f28b8967dfc5c4c</uuid>
             <template>Starlink dish by Prom</template>
             <name>Starlink dish by Prom</name>
             <description>Use project Python starlink-grpc-tools
@@ -26,7 +26,7 @@ python dish_grpc_prometheus.py status</description>
             </groups>
             <items>
                 <item>
-                    <uuid>240eae7e81d94a4c8d906208bdeaf220</uuid>
+                    <uuid>0016a5b73e574ffd92f3658a7bc237e1</uuid>
                     <name>Starlink alerts</name>
                     <type>DEPENDENT</type>
                     <key>starlink.alerts</key>
@@ -60,7 +60,7 @@ python dish_grpc_prometheus.py status</description>
                     </tags>
                     <triggers>
                         <trigger>
-                            <uuid>b65e1624d6fd4f5eb9dd5f847c84cb2b</uuid>
+                            <uuid>10a06ee48bb14b269d74dfb169313b7e</uuid>
                             <expression>last(/Starlink dish by Prom/starlink.alerts,#3)&gt;0</expression>
                             <name>Starlink alert</name>
                             <opdata>Current value: {ITEM.LASTVALUE1}</opdata>
@@ -75,7 +75,7 @@ python dish_grpc_prometheus.py status</description>
                             </tags>
                         </trigger>
                         <trigger>
-                            <uuid>9a4f38034f0a459fa277fec1540d1d94</uuid>
+                            <uuid>83b0d39cc53f419c9b268a1e04cc0316</uuid>
                             <expression>last(/Starlink dish by Prom/starlink.alerts,#3)=128</expression>
                             <name>Starlink alert install pending</name>
                             <opdata>Current value: {ITEM.LASTVALUE1}</opdata>
@@ -92,7 +92,7 @@ python dish_grpc_prometheus.py status</description>
                     </triggers>
                 </item>
                 <item>
-                    <uuid>e8e56ac56533453c9767fb8eac4eba78</uuid>
+                    <uuid>6907c805b7104aa8a0af94b58d2eaae4</uuid>
                     <name>Starlink currently obstructed</name>
                     <type>DEPENDENT</type>
                     <key>starlink.currently_obstructed</key>
@@ -123,7 +123,7 @@ python dish_grpc_prometheus.py status</description>
                     </tags>
                 </item>
                 <item>
-                    <uuid>1e288e2e394a44a190b9b1750d811d7d</uuid>
+                    <uuid>21bf718f682c4e16a6a7952ea7c0b9ec</uuid>
                     <name>Starlink direction azimuth</name>
                     <type>DEPENDENT</type>
                     <key>starlink.direction_azimuth</key>
@@ -150,7 +150,7 @@ python dish_grpc_prometheus.py status</description>
                     </tags>
                 </item>
                 <item>
-                    <uuid>74232717de3b4e6d9f07df1cbdb9f11f</uuid>
+                    <uuid>8b8364416b8c4ca9bacf2240ed2c063b</uuid>
                     <name>Starlink direction elevation</name>
                     <type>DEPENDENT</type>
                     <key>starlink.direction_elevation</key>
@@ -177,7 +177,7 @@ python dish_grpc_prometheus.py status</description>
                     </tags>
                 </item>
                 <item>
-                    <uuid>4e6568068d1f4e9494c6eaa33a663511</uuid>
+                    <uuid>8030baf3eb3e48a5a172eebf57789684</uuid>
                     <name>Starlink downlink throughput bps</name>
                     <type>DEPENDENT</type>
                     <key>starlink.downlink</key>
@@ -209,7 +209,7 @@ python dish_grpc_prometheus.py status</description>
                     </tags>
                 </item>
                 <item>
-                    <uuid>eaab48a24d9242aca6f7f725fe285e65</uuid>
+                    <uuid>f7b2513d562d4abf8f3d5dd45e605dcd</uuid>
                     <name>Starlink fraction obstructed</name>
                     <type>DEPENDENT</type>
                     <key>starlink.fraction_obstructed</key>
@@ -240,7 +240,7 @@ python dish_grpc_prometheus.py status</description>
                     </tags>
                 </item>
                 <item>
-                    <uuid>f45edaa759c54882bf9b76c1a07d2546</uuid>
+                    <uuid>f714ad21ddfa4ab79f6ce249605470e5</uuid>
                     <name>Starlink hardware version</name>
                     <type>DEPENDENT</type>
                     <key>starlink.hardware_version</key>
@@ -268,7 +268,7 @@ python dish_grpc_prometheus.py status</description>
                     </tags>
                 </item>
                 <item>
-                    <uuid>b849d7cea38948dd881391167eecb861</uuid>
+                    <uuid>8d3b5fe9f591489889f551636fdbb661</uuid>
                     <name>Starlink ID</name>
                     <type>DEPENDENT</type>
                     <key>starlink.id</key>
@@ -296,7 +296,7 @@ python dish_grpc_prometheus.py status</description>
                     </tags>
                 </item>
                 <item>
-                    <uuid>415805b476d24a8f9971b342137ce40a</uuid>
+                    <uuid>39d30608d1804ea587205834a7922075</uuid>
                     <name>Starlink obstruction duration</name>
                     <type>DEPENDENT</type>
                     <key>starlink.obstruction_duration</key>
@@ -323,7 +323,7 @@ python dish_grpc_prometheus.py status</description>
                     </tags>
                 </item>
                 <item>
-                    <uuid>3aa2e177ae654062bb4efc1626b16827</uuid>
+                    <uuid>cfbc91f8db9c4b57b217cd54f4d58f1f</uuid>
                     <name>Starlink obstruction interval</name>
                     <type>DEPENDENT</type>
                     <key>starlink.obstruction_interval</key>
@@ -350,7 +350,7 @@ python dish_grpc_prometheus.py status</description>
                     </tags>
                 </item>
                 <item>
-                    <uuid>54cda913249e49778a9d8f1f7a4e3103</uuid>
+                    <uuid>374caaf214f34bb1966c0b40783ff06f</uuid>
                     <name>Starlink ping latency</name>
                     <type>DEPENDENT</type>
                     <key>starlink.ping.latency</key>
@@ -381,7 +381,7 @@ python dish_grpc_prometheus.py status</description>
                     </tags>
                 </item>
                 <item>
-                    <uuid>6a95f2f4d93b464eb48f2a72e76569ad</uuid>
+                    <uuid>55402c56edf143ffa6e2486592826e3b</uuid>
                     <name>Starlink pop ping drop rate</name>
                     <type>DEPENDENT</type>
                     <key>starlink.pop.ping.drop_rate</key>
@@ -412,7 +412,7 @@ python dish_grpc_prometheus.py status</description>
                     </tags>
                 </item>
                 <item>
-                    <uuid>e41dddd80e1b4209a3255f9e2dda27f1</uuid>
+                    <uuid>e14cead36d154f9fb6ecf37f312390af</uuid>
                     <name>Starlink seconds to first nonempty slot</name>
                     <type>DEPENDENT</type>
                     <key>starlink.seconds.to.first.nonempty_slot</key>
@@ -439,7 +439,7 @@ python dish_grpc_prometheus.py status</description>
                     </tags>
                 </item>
                 <item>
-                    <uuid>35c9f56a477d475d8edcef2c297cf075</uuid>
+                    <uuid>0af6867e82a34c1682452239a6ee1c44</uuid>
                     <name>Starlink seconds obstructed</name>
                     <type>DEPENDENT</type>
                     <key>starlink.seconds_obstructed</key>
@@ -470,7 +470,7 @@ python dish_grpc_prometheus.py status</description>
                     </tags>
                 </item>
                 <item>
-                    <uuid>01d39e4405e948e5ab8d34ecc124c8b5</uuid>
+                    <uuid>671f05cd7db44fd18fd13c66ce95d482</uuid>
                     <name>Starlink snr above noise floor</name>
                     <type>DEPENDENT</type>
                     <key>starlink.snr_above_noise_floor</key>
@@ -497,7 +497,7 @@ python dish_grpc_prometheus.py status</description>
                     </tags>
                 </item>
                 <item>
-                    <uuid>5ce94e4f9f064b64ac54f010096e88e9</uuid>
+                    <uuid>367a1a29b87b4ec09952ef470f16ade9</uuid>
                     <name>Starlink software version</name>
                     <type>DEPENDENT</type>
                     <key>starlink.software_version</key>
@@ -525,7 +525,7 @@ python dish_grpc_prometheus.py status</description>
                     </tags>
                     <triggers>
                         <trigger>
-                            <uuid>6f4534d529184916a150178dab30004a</uuid>
+                            <uuid>8465e95a57574200a6d1710c37e372dd</uuid>
                             <expression>last(/Starlink dish by Prom/starlink.software_version,#1)&lt;&gt;last(/Starlink dish by Prom/starlink.software_version,#2) and length(last(/Starlink dish by Prom/starlink.software_version))&gt;0</expression>
                             <name>Starlink firmware has changed</name>
                             <opdata>Current value: {ITEM.LASTVALUE1}</opdata>
@@ -546,7 +546,7 @@ python dish_grpc_prometheus.py status</description>
                     </triggers>
                 </item>
                 <item>
-                    <uuid>171ae92482f94fa7997a60cdf217ca17</uuid>
+                    <uuid>06ecd96796554f158fb4843c1f0ec2d4</uuid>
                     <name>Starlink state</name>
                     <type>DEPENDENT</type>
                     <key>starlink.state</key>
@@ -574,7 +574,7 @@ python dish_grpc_prometheus.py status</description>
                     </tags>
                     <triggers>
                         <trigger>
-                            <uuid>ffcffb69050043d09aad943b28a49ebe</uuid>
+                            <uuid>ec5b87dc875e46e1adb7f383d0d9087c</uuid>
                             <expression>last(/Starlink dish by Prom/starlink.state,#1)&lt;&gt;last(/Starlink dish by Prom/starlink.state,#2) and length(last(/Starlink dish by Prom/starlink.state))&gt;0</expression>
                             <name>Starlink status has changed</name>
                             <opdata>Current value: {ITEM.LASTVALUE1}</opdata>
@@ -591,7 +591,7 @@ python dish_grpc_prometheus.py status</description>
                     </triggers>
                 </item>
                 <item>
-                    <uuid>31fccd6dcc034b41abd295940144cfe6</uuid>
+                    <uuid>a9d9f64e2a264388ace3affc30114ba8</uuid>
                     <name>Starlink uplink throughput bps</name>
                     <type>DEPENDENT</type>
                     <key>starlink.uplink</key>
@@ -623,7 +623,7 @@ python dish_grpc_prometheus.py status</description>
                     </tags>
                 </item>
                 <item>
-                    <uuid>6026d5c9b7ea46d5be9607e6a6a3f4f1</uuid>
+                    <uuid>ef64e026726c49358753c7cb640d5025</uuid>
                     <name>Starlink uptime</name>
                     <type>DEPENDENT</type>
                     <key>starlink.uptime</key>
@@ -652,7 +652,7 @@ python dish_grpc_prometheus.py status</description>
                     </tags>
                     <triggers>
                         <trigger>
-                            <uuid>f30e1af4efea44569d64ae1cf7ab1a75</uuid>
+                            <uuid>a171cdc12ccb4a2abe6a3afc35f339b9</uuid>
                             <expression>last(/Starlink dish by Prom/starlink.uptime)&lt;10m</expression>
                             <name>{HOST.NAME} has been restarted (uptime &lt; 10m)</name>
                             <priority>WARNING</priority>
@@ -668,7 +668,7 @@ python dish_grpc_prometheus.py status</description>
                     </triggers>
                 </item>
                 <item>
-                    <uuid>2cf4b82dc8374b64a659ac3b9b8ee31d</uuid>
+                    <uuid>6c08bdc0958b43e391b85f1a29c0db12</uuid>
                     <name>Starlink: Get dish data</name>
                     <type>HTTP_AGENT</type>
                     <key>zbx.starlink.dish.data</key>
@@ -684,7 +684,7 @@ python dish_grpc_prometheus.py status</description>
                     </tags>
                     <triggers>
                         <trigger>
-                            <uuid>98501781a4814ab6830966b825a061bc</uuid>
+                            <uuid>5b34b91abed54e1a8d890ceeda1fd32e</uuid>
                             <expression>nodata(/Starlink dish by Prom/zbx.starlink.dish.data,30)=1</expression>
                             <name>starlink_exporter is not available (or no data for 30m)</name>
                             <priority>HIGH</priority>
@@ -722,7 +722,7 @@ python dish_grpc_prometheus.py status</description>
             </macros>
             <dashboards>
                 <dashboard>
-                    <uuid>888b536c7277482f915f918ff8044ca5</uuid>
+                    <uuid>53dec447e09e456db6efbcbe25a833c5</uuid>
                     <name>Starlink status</name>
                     <pages>
                         <page>
@@ -731,7 +731,7 @@ python dish_grpc_prometheus.py status</description>
                                 <widget>
                                     <type>GRAPH_CLASSIC</type>
                                     <width>12</width>
-                                    <height>5</height>
+                                    <height>6</height>
                                     <fields>
                                         <field>
                                             <type>GRAPH</type>
@@ -747,7 +747,7 @@ python dish_grpc_prometheus.py status</description>
                                     <type>GRAPH_CLASSIC</type>
                                     <x>12</x>
                                     <width>12</width>
-                                    <height>5</height>
+                                    <height>6</height>
                                     <fields>
                                         <field>
                                             <type>GRAPH</type>
@@ -767,7 +767,7 @@ python dish_grpc_prometheus.py status</description>
                                 <widget>
                                     <type>GRAPH_CLASSIC</type>
                                     <width>10</width>
-                                    <height>5</height>
+                                    <height>6</height>
                                     <fields>
                                         <field>
                                             <type>GRAPH</type>
@@ -840,7 +840,8 @@ python dish_grpc_prometheus.py status</description>
                                     <type>ITEM</type>
                                     <x>10</x>
                                     <y>3</y>
-                                    <width>14</width>
+                                    <width>10</width>
+                                    <height>3</height>
                                     <fields>
                                         <field>
                                             <type>INTEGER</type>
@@ -851,6 +852,16 @@ python dish_grpc_prometheus.py status</description>
                                             <type>INTEGER</type>
                                             <name>adv_conf</name>
                                             <value>1</value>
+                                        </field>
+                                        <field>
+                                            <type>INTEGER</type>
+                                            <name>decimal_size</name>
+                                            <value>15</value>
+                                        </field>
+                                        <field>
+                                            <type>INTEGER</type>
+                                            <name>value_size</name>
+                                            <value>25</value>
                                         </field>
                                         <field>
                                             <type>STRING</type>
@@ -867,12 +878,59 @@ python dish_grpc_prometheus.py status</description>
                                         </field>
                                     </fields>
                                 </widget>
+                                <widget>
+                                    <type>ITEM</type>
+                                    <x>20</x>
+                                    <y>3</y>
+                                    <width>4</width>
+                                    <height>3</height>
+                                    <fields>
+                                        <field>
+                                            <type>INTEGER</type>
+                                            <name>show</name>
+                                            <value>2</value>
+                                        </field>
+                                        <field>
+                                            <type>INTEGER</type>
+                                            <name>adv_conf</name>
+                                            <value>1</value>
+                                        </field>
+                                        <field>
+                                            <type>INTEGER</type>
+                                            <name>decimal_places</name>
+                                            <value>0</value>
+                                        </field>
+                                        <field>
+                                            <type>INTEGER</type>
+                                            <name>decimal_size</name>
+                                            <value>25</value>
+                                        </field>
+                                        <field>
+                                            <type>INTEGER</type>
+                                            <name>value_size</name>
+                                            <value>35</value>
+                                        </field>
+                                        <field>
+                                            <type>STRING</type>
+                                            <name>value_color</name>
+                                            <value>FF0000</value>
+                                        </field>
+                                        <field>
+                                            <type>ITEM</type>
+                                            <name>itemid</name>
+                                            <value>
+                                                <host>Starlink dish by Prom</host>
+                                                <key>starlink.alerts</key>
+                                            </value>
+                                        </field>
+                                    </fields>
+                                </widget>
                             </widgets>
                         </page>
                     </pages>
                 </dashboard>
                 <dashboard>
-                    <uuid>80a803efec4f4a86b150382fb2a4da97</uuid>
+                    <uuid>ea1e7cbf69364c54b876f230d15d6c25</uuid>
                     <name>Starlink traffic</name>
                     <pages>
                         <page>
@@ -899,7 +957,7 @@ python dish_grpc_prometheus.py status</description>
             </dashboards>
             <valuemaps>
                 <valuemap>
-                    <uuid>169e8f1eac6240f285adfcc5879172b7</uuid>
+                    <uuid>8b7854b7b5f34266a40772317a968c49</uuid>
                     <name>Starlink alerts</name>
                     <mappings>
                         <mapping>
@@ -943,6 +1001,10 @@ python dish_grpc_prometheus.py status</description>
                             <newvalue>Is heating</newvalue>
                         </mapping>
                         <mapping>
+                            <value>257</value>
+                            <newvalue>Unknown ?</newvalue>
+                        </mapping>
+                        <mapping>
                             <value>512</value>
                             <newvalue>Power supply thermal throttle</newvalue>
                         </mapping>
@@ -965,7 +1027,7 @@ python dish_grpc_prometheus.py status</description>
     </templates>
     <graphs>
         <graph>
-            <uuid>64114d0f9f0043fca60f540cfe0fea3a</uuid>
+            <uuid>335b962a8f7a495a90904f264b03a2fb</uuid>
             <name>Starlink alerts</name>
             <show_work_period>NO</show_work_period>
             <show_triggers>NO</show_triggers>
@@ -982,7 +1044,7 @@ python dish_grpc_prometheus.py status</description>
             </graph_items>
         </graph>
         <graph>
-            <uuid>949fe350c0bd464bbc616a4e7dfbca71</uuid>
+            <uuid>aa36140bbcd048bb8d6e1e20a398b1e8</uuid>
             <name>Starlink ping</name>
             <graph_items>
                 <graph_item>
@@ -1007,7 +1069,7 @@ python dish_grpc_prometheus.py status</description>
             </graph_items>
         </graph>
         <graph>
-            <uuid>aa6bce6b8a4f4804a3b546d7f5ec4c3f</uuid>
+            <uuid>b1b948128e68417fab6f6a75d0dac4f5</uuid>
             <name>Starlink traffic</name>
             <graph_items>
                 <graph_item>
