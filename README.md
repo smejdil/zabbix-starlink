@@ -37,7 +37,7 @@ cd /root/starlink-grpc-tools
 git clone https://github.com/sparky8512/starlink-grpc-tools && cd starlink-grpc-tools
 cp ../zabbix-starlink/Dockerfile.patch ./
 patch < Dockerfile.patch 
-patching file Dockerfile-inst
+patching file Dockerfile
 
 docker build -t starlink-grpc-tools .
 docker run -d -t -p 8080:8080 --name='starlink-grpc-tools' starlink-grpc-tools
