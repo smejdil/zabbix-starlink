@@ -1,13 +1,13 @@
 zabbix_export:
   version: '6.0'
-  date: '2023-04-13T08:27:02Z'
+  date: '2023-04-25T13:00:48Z'
   groups:
     -
       uuid: 7df96b18c230490a9a0a9e2307226338
       name: Templates
   templates:
     -
-      uuid: 68ad921d58194cd99f28b8967dfc5c4c
+      uuid: 259e8a259c4043c5bd8d29d5d7cf6f4c
       template: 'Starlink dish by Prom'
       name: 'Starlink dish by Prom'
       description: |
@@ -22,12 +22,13 @@ zabbix_export:
           name: Templates
       items:
         -
-          uuid: 0016a5b73e574ffd92f3658a7bc237e1
+          uuid: 0db5bc43793d41e5af87c31cf7fa1c91
           name: 'Starlink alerts'
           type: DEPENDENT
           key: starlink.alerts
           delay: '0'
           value_type: FLOAT
+          description: 'A bit field combining all active alerts, where a 1 bit indicates the alert is active. See alert detail status data for which bits correspond with each alert, or to get individual alert flags instead of a combined bit mask.'
           valuemap:
             name: 'Starlink alerts'
           preprocessing:
@@ -48,19 +49,23 @@ zabbix_export:
               value: alert
           triggers:
             -
-              uuid: 10a06ee48bb14b269d74dfb169313b7e
+              uuid: bf7bf8f51344437a9007885b34dd345b
               expression: 'last(/Starlink dish by Prom/starlink.alerts,#3)>0'
               name: 'Starlink alert'
               opdata: 'Current value: {ITEM.LASTVALUE1}'
               priority: INFO
               description: 'Starlink alert. Ack to close'
               manual_close: 'YES'
+              dependencies:
+                -
+                  name: 'Starlink alert install pending'
+                  expression: 'last(/Starlink dish by Prom/starlink.alerts,#3)=128'
               tags:
                 -
                   tag: scope
                   value: notice
             -
-              uuid: 83b0d39cc53f419c9b268a1e04cc0316
+              uuid: 6997bc4c2a80414d8f71a77e72154e43
               expression: 'last(/Starlink dish by Prom/starlink.alerts,#3)=128'
               name: 'Starlink alert install pending'
               opdata: 'Current value: {ITEM.LASTVALUE1}'
@@ -72,12 +77,13 @@ zabbix_export:
                   tag: scope
                   value: notice
         -
-          uuid: 6907c805b7104aa8a0af94b58d2eaae4
+          uuid: 9eac4dc3aedb4c899d5be9497caf3697
           name: 'Starlink currently obstructed'
           type: DEPENDENT
           key: starlink.currently_obstructed
           delay: '0'
           value_type: FLOAT
+          description: 'Most recent sample value. See *obstructed* in bulk history data for detail. This item still appears to be reported by the user terminal despite no longer appearing in the bulk history data.'
           preprocessing:
             -
               type: PROMETHEUS_PATTERN
@@ -95,12 +101,13 @@ zabbix_export:
               tag: scope
               value: obstructed
         -
-          uuid: 21bf718f682c4e16a6a7952ea7c0b9ec
+          uuid: 9f5dcf3dadf749149cf2bf3f174fe108
           name: 'Starlink direction azimuth'
           type: DEPENDENT
           key: starlink.direction_azimuth
           delay: '0'
           value_type: FLOAT
+          description: 'Azimuth angle, in degrees, of the direction in which the user terminal''s dish antenna is physically pointing. Note that this generally is not the exact direction of the satellite with which the user terminal is communicating.'
           preprocessing:
             -
               type: PROMETHEUS_PATTERN
@@ -115,12 +122,13 @@ zabbix_export:
               tag: component
               value: starlink
         -
-          uuid: 8b8364416b8c4ca9bacf2240ed2c063b
+          uuid: a2c2d8f3fda744a19869e56748acbb7c
           name: 'Starlink direction elevation'
           type: DEPENDENT
           key: starlink.direction_elevation
           delay: '0'
           value_type: FLOAT
+          description: 'Elevation angle, in degrees, of the direction in which the user terminal''s dish antenna is physically pointing.'
           preprocessing:
             -
               type: PROMETHEUS_PATTERN
@@ -135,13 +143,14 @@ zabbix_export:
               tag: component
               value: starlink
         -
-          uuid: 8030baf3eb3e48a5a172eebf57789684
+          uuid: 9eddc255499a49c58cc3e9e8c006d70b
           name: 'Starlink downlink throughput bps'
           type: DEPENDENT
           key: starlink.downlink
           delay: '0'
           value_type: FLOAT
           units: bps
+          description: 'Most recent sample value. See bulk history data for detail.'
           preprocessing:
             -
               type: PROMETHEUS_PATTERN
@@ -159,12 +168,13 @@ zabbix_export:
               tag: scope
               value: traffic
         -
-          uuid: f7b2513d562d4abf8f3d5dd45e605dcd
+          uuid: 25b2a4cb5a34497494b0d1c7382d14c1
           name: 'Starlink fraction obstructed'
           type: DEPENDENT
           key: starlink.fraction_obstructed
           delay: '0'
           value_type: FLOAT
+          description: 'The fraction of total area (or possibly fraction of time?) that the user terminal has determined to be obstructed between it and the satellites with which it communicates.'
           preprocessing:
             -
               type: PROMETHEUS_PATTERN
@@ -182,13 +192,15 @@ zabbix_export:
               tag: scope
               value: obstructed
         -
-          uuid: f714ad21ddfa4ab79f6ce249605470e5
+          uuid: 195bfef3e2e34f88b2262e6831cc1f7b
           name: 'Starlink hardware version'
           type: DEPENDENT
           key: starlink.hardware_version
           delay: '0'
           trends: '0'
           value_type: CHAR
+          description: 'A string identifying the user terminal hardware version.'
+          inventory_link: HARDWARE
           preprocessing:
             -
               type: PROMETHEUS_PATTERN
@@ -203,13 +215,15 @@ zabbix_export:
               tag: component
               value: starlink
         -
-          uuid: 8d3b5fe9f591489889f551636fdbb661
+          uuid: 170aa74e1e0c4f77a89279ac20075bb8
           name: 'Starlink ID'
           type: DEPENDENT
           key: starlink.id
           delay: '0'
           trends: '0'
           value_type: CHAR
+          description: 'A string identifying the specific user terminal device that was reachable from the local network. Something like a serial number.'
+          inventory_link: SERIALNO_A
           preprocessing:
             -
               type: PROMETHEUS_PATTERN
@@ -224,12 +238,13 @@ zabbix_export:
               tag: component
               value: starlink
         -
-          uuid: 39d30608d1804ea587205834a7922075
+          uuid: fe67f6503c1f43449e8c9fcec7e63f15
           name: 'Starlink obstruction duration'
           type: DEPENDENT
           key: starlink.obstruction_duration
           delay: '0'
           value_type: FLOAT
+          description: 'Average consecutive time, in seconds, the user terminal has detected its signal to be obstructed for a period of time that it considers "prolonged", or None if no such obstructions were recorded.'
           preprocessing:
             -
               type: PROMETHEUS_PATTERN
@@ -244,12 +259,13 @@ zabbix_export:
               tag: component
               value: starlink
         -
-          uuid: cfbc91f8db9c4b57b217cd54f4d58f1f
+          uuid: c1cef4bed95a416186056146bcb7876c
           name: 'Starlink obstruction interval'
           type: DEPENDENT
           key: starlink.obstruction_interval
           delay: '0'
           value_type: FLOAT
+          description: 'Average time, in seconds, between the start of such "prolonged" obstructions, or None if no such obstructions were recorded.'
           preprocessing:
             -
               type: PROMETHEUS_PATTERN
@@ -264,12 +280,13 @@ zabbix_export:
               tag: component
               value: starlink
         -
-          uuid: 374caaf214f34bb1966c0b40783ff06f
+          uuid: 263a1720583c4958b1ce056c8b79a88f
           name: 'Starlink ping latency'
           type: DEPENDENT
           key: starlink.ping.latency
           delay: '0'
           value_type: FLOAT
+          description: 'Most recent sample value. See bulk history data for detail.'
           preprocessing:
             -
               type: PROMETHEUS_PATTERN
@@ -287,12 +304,13 @@ zabbix_export:
               tag: scope
               value: ping
         -
-          uuid: 55402c56edf143ffa6e2486592826e3b
+          uuid: e3443e88eaf1444bba1ffe7f1d843200
           name: 'Starlink pop ping drop rate'
           type: DEPENDENT
           key: starlink.pop.ping.drop_rate
           delay: '0'
           value_type: FLOAT
+          description: 'Most recent sample value. See bulk history data for detail.'
           preprocessing:
             -
               type: PROMETHEUS_PATTERN
@@ -310,12 +328,13 @@ zabbix_export:
               tag: scope
               value: ping
         -
-          uuid: e14cead36d154f9fb6ecf37f312390af
+          uuid: 04c793495b6947a9acdf6a23787a7a43
           name: 'Starlink seconds to first nonempty slot'
           type: DEPENDENT
           key: starlink.seconds.to.first.nonempty_slot
           delay: '0'
           value_type: FLOAT
+          description: 'Amount of time from now, in seconds, until a satellite will be scheduled to be available for transmit/receive. See also *scheduled* in the bulk history data. May report as a negative number, which appears to indicate unknown time until next satellite scheduled and usually correlates with *state* reporting as other than "CONNECTED".'
           preprocessing:
             -
               type: PROMETHEUS_PATTERN
@@ -330,12 +349,16 @@ zabbix_export:
               tag: component
               value: starlink
         -
-          uuid: 0af6867e82a34c1682452239a6ee1c44
+          uuid: 4987bda7c015407c9381630df684b753
           name: 'Starlink seconds obstructed'
           type: DEPENDENT
           key: starlink.seconds_obstructed
           delay: '0'
           value_type: FLOAT
+          description: |
+            The amount of time within the history buffer, in seconds, that the user terminal determined to be obstructed, regardless of whether or not packets were able to be transmitted or received.
+            
+            **OBSOLETE**: The user terminal no longer provides this data.
           preprocessing:
             -
               type: PROMETHEUS_PATTERN
@@ -353,12 +376,16 @@ zabbix_export:
               tag: scope
               value: obstructed
         -
-          uuid: 671f05cd7db44fd18fd13c66ce95d482
+          uuid: c5d2ea23e7fd42b4aebb804431ca51f9
           name: 'Starlink snr above noise floor'
           type: DEPENDENT
           key: starlink.snr_above_noise_floor
           delay: '0'
           value_type: FLOAT
+          description: |
+            Most recent sample value. See bulk history data for detail.
+            
+            **OBSOLETE**: The user terminal no longer provides this data.
           preprocessing:
             -
               type: PROMETHEUS_PATTERN
@@ -373,13 +400,15 @@ zabbix_export:
               tag: component
               value: starlink
         -
-          uuid: 367a1a29b87b4ec09952ef470f16ade9
+          uuid: 80fcc3488a174bd485c19b2b67174cf2
           name: 'Starlink software version'
           type: DEPENDENT
           key: starlink.software_version
           delay: '0'
           trends: '0'
           value_type: CHAR
+          description: 'A string identifying the software currently installed on the user terminal.'
+          inventory_link: SOFTWARE
           preprocessing:
             -
               type: PROMETHEUS_PATTERN
@@ -395,7 +424,7 @@ zabbix_export:
               value: starlink
           triggers:
             -
-              uuid: 8465e95a57574200a6d1710c37e372dd
+              uuid: c1c1225f9c0b42a8be30327fad7ad974
               expression: 'last(/Starlink dish by Prom/starlink.software_version,#1)<>last(/Starlink dish by Prom/starlink.software_version,#2) and length(last(/Starlink dish by Prom/starlink.software_version))>0'
               name: 'Starlink firmware has changed'
               opdata: 'Current value: {ITEM.LASTVALUE1}'
@@ -410,13 +439,17 @@ zabbix_export:
                   tag: scope
                   value: notice
         -
-          uuid: 06ecd96796554f158fb4843c1f0ec2d4
+          uuid: 5a2b78039e14457c800a5008f36c243e
           name: 'Starlink state'
           type: DEPENDENT
           key: starlink.state
           delay: '0'
           trends: '0'
           value_type: CHAR
+          description: |
+            As string describing the current connectivity state of the user terminal. One of: 
+            
+            "UNKNOWN", "CONNECTED", "BOOTING", "SEARCHING", "STOWED", "THERMAL_SHUTDOWN", "NO_SATS", "OBSTRUCTED", "NO_DOWNLINK", "NO_PINGS"
           preprocessing:
             -
               type: PROMETHEUS_PATTERN
@@ -432,7 +465,7 @@ zabbix_export:
               value: starlink
           triggers:
             -
-              uuid: ec5b87dc875e46e1adb7f383d0d9087c
+              uuid: 12af95d3146d4d0e85079d4b6eedfbdb
               expression: 'last(/Starlink dish by Prom/starlink.state,#1)<>last(/Starlink dish by Prom/starlink.state,#2) and length(last(/Starlink dish by Prom/starlink.state))>0'
               name: 'Starlink status has changed'
               opdata: 'Current value: {ITEM.LASTVALUE1}'
@@ -444,13 +477,14 @@ zabbix_export:
                   tag: scope
                   value: status
         -
-          uuid: a9d9f64e2a264388ace3affc30114ba8
+          uuid: d8425ce93204421ba0f49277ad960f09
           name: 'Starlink uplink throughput bps'
           type: DEPENDENT
           key: starlink.uplink
           delay: '0'
           value_type: FLOAT
           units: bps
+          description: 'Most recent sample value. See bulk history data for detail.'
           preprocessing:
             -
               type: PROMETHEUS_PATTERN
@@ -468,14 +502,17 @@ zabbix_export:
               tag: scope
               value: traffic
         -
-          uuid: ef64e026726c49358753c7cb640d5025
+          uuid: c351946690074f1f9c5979baa0ae07e0
           name: 'Starlink uptime'
           type: DEPENDENT
           key: starlink.uptime
           delay: '0'
           value_type: FLOAT
           units: uptime
-          description: 'Starlink uptime in ''N days, hh:mm:ss'' format.'
+          description: |
+            The amount of time, in seconds, since the user terminal last rebooted.
+            
+            Starlink uptime in 'N days, hh:mm:ss' format.
           preprocessing:
             -
               type: PROMETHEUS_PATTERN
@@ -491,7 +528,7 @@ zabbix_export:
               value: starlink
           triggers:
             -
-              uuid: a171cdc12ccb4a2abe6a3afc35f339b9
+              uuid: e4b671e098964a67a74a56de29dbae61
               expression: 'last(/Starlink dish by Prom/starlink.uptime)<10m'
               name: '{HOST.NAME} has been restarted (uptime < 10m)'
               priority: WARNING
@@ -502,7 +539,7 @@ zabbix_export:
                   tag: scope
                   value: notice
         -
-          uuid: 6c08bdc0958b43e391b85f1a29c0db12
+          uuid: 0c5d6dbc2a764a8997106efc6faafe2e
           name: 'Starlink: Get dish data'
           type: HTTP_AGENT
           key: zbx.starlink.dish.data
@@ -516,7 +553,7 @@ zabbix_export:
               value: raw
           triggers:
             -
-              uuid: 5b34b91abed54e1a8d890ceeda1fd32e
+              uuid: 698c274870ed4db49d3d883ef48ea3a0
               expression: 'nodata(/Starlink dish by Prom/zbx.starlink.dish.data,30)=1'
               name: 'starlink_exporter is not available (or no data for 30m)'
               priority: HIGH
@@ -542,7 +579,7 @@ zabbix_export:
           value: http
       dashboards:
         -
-          uuid: 53dec447e09e456db6efbcbe25a833c5
+          uuid: c9612c8a85794cd79fa94a7c19fa259b
           name: 'Starlink status'
           pages:
             -
@@ -585,6 +622,39 @@ zabbix_export:
                       value:
                         host: 'Starlink dish by Prom'
                         name: 'Starlink traffic'
+                -
+                  type: ITEM
+                  x: '10'
+                  'y': '3'
+                  width: '10'
+                  height: '3'
+                  fields:
+                    -
+                      type: INTEGER
+                      name: show
+                      value: '2'
+                    -
+                      type: INTEGER
+                      name: adv_conf
+                      value: '1'
+                    -
+                      type: INTEGER
+                      name: decimal_size
+                      value: '15'
+                    -
+                      type: INTEGER
+                      name: value_size
+                      value: '25'
+                    -
+                      type: STRING
+                      name: value_color
+                      value: 0040FF
+                    -
+                      type: ITEM
+                      name: itemid
+                      value:
+                        host: 'Starlink dish by Prom'
+                        key: starlink.software_version
                 -
                   type: ITEM
                   x: '10'
@@ -631,39 +701,6 @@ zabbix_export:
                         key: starlink.uptime
                 -
                   type: ITEM
-                  x: '10'
-                  'y': '3'
-                  width: '10'
-                  height: '3'
-                  fields:
-                    -
-                      type: INTEGER
-                      name: show
-                      value: '2'
-                    -
-                      type: INTEGER
-                      name: adv_conf
-                      value: '1'
-                    -
-                      type: INTEGER
-                      name: decimal_size
-                      value: '15'
-                    -
-                      type: INTEGER
-                      name: value_size
-                      value: '25'
-                    -
-                      type: STRING
-                      name: value_color
-                      value: 0040FF
-                    -
-                      type: ITEM
-                      name: itemid
-                      value:
-                        host: 'Starlink dish by Prom'
-                        key: starlink.software_version
-                -
-                  type: ITEM
                   x: '20'
                   'y': '3'
                   width: '4'
@@ -700,7 +737,7 @@ zabbix_export:
                         host: 'Starlink dish by Prom'
                         key: starlink.alerts
         -
-          uuid: ea1e7cbf69364c54b876f230d15d6c25
+          uuid: b858a9c4e58e494496065be0993f42b8
           name: 'Starlink traffic'
           pages:
             -
@@ -718,7 +755,7 @@ zabbix_export:
                         name: 'Starlink traffic'
       valuemaps:
         -
-          uuid: 8b7854b7b5f34266a40772317a968c49
+          uuid: ccba6d610c4d47b891b85a5dcb240fa7
           name: 'Starlink alerts'
           mappings:
             -
@@ -768,7 +805,7 @@ zabbix_export:
               newvalue: 'Moving fast while not aviation'
   graphs:
     -
-      uuid: 335b962a8f7a495a90904f264b03a2fb
+      uuid: bc9e3c36e2bc45c4a5129abd5f73d6db
       name: 'Starlink alerts'
       show_work_period: 'NO'
       show_triggers: 'NO'
@@ -781,7 +818,7 @@ zabbix_export:
             host: 'Starlink dish by Prom'
             key: starlink.alerts
     -
-      uuid: aa36140bbcd048bb8d6e1e20a398b1e8
+      uuid: 3c35a85188534f4889d4666fdf559538
       name: 'Starlink ping'
       graph_items:
         -
@@ -800,7 +837,7 @@ zabbix_export:
             host: 'Starlink dish by Prom'
             key: starlink.pop.ping.drop_rate
     -
-      uuid: b1b948128e68417fab6f6a75d0dac4f5
+      uuid: 00bbfde1dab342f88eea28cdc15d462c
       name: 'Starlink traffic'
       graph_items:
         -
