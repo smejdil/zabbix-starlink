@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <zabbix_export>
     <version>6.0</version>
-    <date>2023-05-12T12:16:34Z</date>
+    <date>2023-05-14T10:23:44Z</date>
     <groups>
         <group>
             <uuid>7df96b18c230490a9a0a9e2307226338</uuid>
@@ -10,7 +10,7 @@
     </groups>
     <templates>
         <template>
-            <uuid>1bd0fee4d89a4b1e827db567d167eeea</uuid>
+            <uuid>c7af05e671a645039feda7c3017a499a</uuid>
             <template>Starlink dish by Prom</template>
             <name>Starlink dish by Prom</name>
             <description>Use project Python starlink-grpc-tools
@@ -26,7 +26,7 @@ python dish_grpc_prometheus.py status alert_detail</description>
             </groups>
             <items>
                 <item>
-                    <uuid>8de3381817454695993ef2e9c6a78964</uuid>
+                    <uuid>1f24f39d8b934030a9258f7b76141ff3</uuid>
                     <name>Starlink alerts</name>
                     <type>DEPENDENT</type>
                     <key>starlink.alerts</key>
@@ -61,7 +61,7 @@ python dish_grpc_prometheus.py status alert_detail</description>
                     </tags>
                     <triggers>
                         <trigger>
-                            <uuid>490745951a7c4ec481647c9bb70cfaad</uuid>
+                            <uuid>0957b924c56247058426c08aca5b314a</uuid>
                             <expression>last(/Starlink dish by Prom/starlink.alerts,#3)&gt;0</expression>
                             <name>Starlink alert</name>
                             <opdata>Current value: {ITEM.LASTVALUE1}</opdata>
@@ -84,7 +84,7 @@ python dish_grpc_prometheus.py status alert_detail</description>
                     </triggers>
                 </item>
                 <item>
-                    <uuid>00eef9324a1b430994eec2d9589aa898</uuid>
+                    <uuid>dd3dbcf8eba442ec9f73c39fa3fd9fc4</uuid>
                     <name>Starlink currently obstructed</name>
                     <type>DEPENDENT</type>
                     <key>starlink.currently_obstructed</key>
@@ -116,7 +116,7 @@ python dish_grpc_prometheus.py status alert_detail</description>
                     </tags>
                 </item>
                 <item>
-                    <uuid>b03eddd910d34571a6e19e7558438c71</uuid>
+                    <uuid>7df27318117d4161a76e73a74d95831f</uuid>
                     <name>Starlink direction azimuth</name>
                     <type>DEPENDENT</type>
                     <key>starlink.direction_azimuth</key>
@@ -144,7 +144,7 @@ python dish_grpc_prometheus.py status alert_detail</description>
                     </tags>
                 </item>
                 <item>
-                    <uuid>23f32f2b73be44b09e2e287159ff025d</uuid>
+                    <uuid>f7718db7fc3e4b55b7c8c0f47fcba635</uuid>
                     <name>Starlink direction elevation</name>
                     <type>DEPENDENT</type>
                     <key>starlink.direction_elevation</key>
@@ -172,7 +172,7 @@ python dish_grpc_prometheus.py status alert_detail</description>
                     </tags>
                 </item>
                 <item>
-                    <uuid>1f5b97a1dfe349c8accda6df9fe7fc6c</uuid>
+                    <uuid>c5b518745d224c5ca748299953d8b077</uuid>
                     <name>Starlink downlink throughput bps</name>
                     <type>DEPENDENT</type>
                     <key>starlink.downlink</key>
@@ -205,7 +205,7 @@ python dish_grpc_prometheus.py status alert_detail</description>
                     </tags>
                 </item>
                 <item>
-                    <uuid>b301afdeb82144dc9610e57b4ef3ff19</uuid>
+                    <uuid>a47f05d6695d4d9ca06b4a244586bc1b</uuid>
                     <name>Starlink fraction obstructed</name>
                     <type>DEPENDENT</type>
                     <key>starlink.fraction_obstructed</key>
@@ -237,7 +237,7 @@ python dish_grpc_prometheus.py status alert_detail</description>
                     </tags>
                 </item>
                 <item>
-                    <uuid>d3d066d38e3c4b20a6e1220910c9b405</uuid>
+                    <uuid>41a2aacc066c443a820b3b8302a68eb3</uuid>
                     <name>Starlink hardware version</name>
                     <type>DEPENDENT</type>
                     <key>starlink.hardware_version</key>
@@ -267,7 +267,7 @@ python dish_grpc_prometheus.py status alert_detail</description>
                     </tags>
                 </item>
                 <item>
-                    <uuid>7a90a8f1e881411ab206307f7b16927f</uuid>
+                    <uuid>9ea1f878b7b64171830ffe54dc75846d</uuid>
                     <name>Starlink ID</name>
                     <type>DEPENDENT</type>
                     <key>starlink.id</key>
@@ -297,7 +297,7 @@ python dish_grpc_prometheus.py status alert_detail</description>
                     </tags>
                 </item>
                 <item>
-                    <uuid>4279e46f50034078bf7708cc35c8f152</uuid>
+                    <uuid>0dd3e924e70b47b49eed961a5d533044</uuid>
                     <name>Starlink obstruction duration</name>
                     <type>DEPENDENT</type>
                     <key>starlink.obstruction_duration</key>
@@ -325,7 +325,7 @@ python dish_grpc_prometheus.py status alert_detail</description>
                     </tags>
                 </item>
                 <item>
-                    <uuid>0c6ef703725a4deabfcaa6154603e7fe</uuid>
+                    <uuid>0641a16046884ca58bae4a6f03eb5f48</uuid>
                     <name>Starlink obstruction interval</name>
                     <type>DEPENDENT</type>
                     <key>starlink.obstruction_interval</key>
@@ -353,7 +353,7 @@ python dish_grpc_prometheus.py status alert_detail</description>
                     </tags>
                 </item>
                 <item>
-                    <uuid>da9c6e86d1b04184be695a4a32771876</uuid>
+                    <uuid>b79640299bec4a098326cb3fe6787167</uuid>
                     <name>Starlink ping latency</name>
                     <type>DEPENDENT</type>
                     <key>starlink.ping_latency</key>
@@ -385,7 +385,7 @@ python dish_grpc_prometheus.py status alert_detail</description>
                     </tags>
                 </item>
                 <item>
-                    <uuid>d3c8ecaa4050482c8c9093a775ce5077</uuid>
+                    <uuid>8a08b4aaf7d64311a6e5024068cf467a</uuid>
                     <name>Starlink pop ping drop rate</name>
                     <type>DEPENDENT</type>
                     <key>starlink.pop_ping_drop_rate</key>
@@ -417,7 +417,7 @@ python dish_grpc_prometheus.py status alert_detail</description>
                     </tags>
                 </item>
                 <item>
-                    <uuid>43438728741a4ef2aa675e529207dfad</uuid>
+                    <uuid>fcb324e274174fd9bd0428a181a329f6</uuid>
                     <name>Starlink seconds obstructed</name>
                     <type>DEPENDENT</type>
                     <key>starlink.seconds_obstructed</key>
@@ -451,7 +451,7 @@ python dish_grpc_prometheus.py status alert_detail</description>
                     </tags>
                 </item>
                 <item>
-                    <uuid>9c655afef36448478f588b53a5f9cda0</uuid>
+                    <uuid>bd1b811cc0d342c3b207ea1552d6f30d</uuid>
                     <name>Starlink seconds to first nonempty slot</name>
                     <type>DEPENDENT</type>
                     <key>starlink.seconds_to_first_nonempty_slot</key>
@@ -479,7 +479,7 @@ python dish_grpc_prometheus.py status alert_detail</description>
                     </tags>
                 </item>
                 <item>
-                    <uuid>7356136137724a2c99def3bffe4fc376</uuid>
+                    <uuid>4bb7717b8a6d415c86712855f83339f4</uuid>
                     <name>Starlink snr above noise floor</name>
                     <type>DEPENDENT</type>
                     <key>starlink.snr_above_noise_floor</key>
@@ -509,7 +509,7 @@ python dish_grpc_prometheus.py status alert_detail</description>
                     </tags>
                 </item>
                 <item>
-                    <uuid>774f0d71cae74006a819722fd5ecd337</uuid>
+                    <uuid>cfb9188398ab4114b4d4996d9357b901</uuid>
                     <name>Starlink software version</name>
                     <type>DEPENDENT</type>
                     <key>starlink.software_version</key>
@@ -539,7 +539,7 @@ python dish_grpc_prometheus.py status alert_detail</description>
                     </tags>
                     <triggers>
                         <trigger>
-                            <uuid>da240d91d3b34cd2997b6b1a043a20ad</uuid>
+                            <uuid>5f109a2687174983854adbbc5fd12c5c</uuid>
                             <expression>last(/Starlink dish by Prom/starlink.software_version,#1)&lt;&gt;last(/Starlink dish by Prom/starlink.software_version,#2) and length(last(/Starlink dish by Prom/starlink.software_version))&gt;0</expression>
                             <name>Starlink firmware has changed</name>
                             <opdata>Current value: {ITEM.LASTVALUE1}</opdata>
@@ -560,7 +560,7 @@ python dish_grpc_prometheus.py status alert_detail</description>
                     </triggers>
                 </item>
                 <item>
-                    <uuid>ada885696bef41119973e0a76d91a2e3</uuid>
+                    <uuid>49e42e8fc8844cfea35a0e8d19e95fb9</uuid>
                     <name>Starlink state</name>
                     <type>DEPENDENT</type>
                     <key>starlink.state</key>
@@ -591,7 +591,7 @@ python dish_grpc_prometheus.py status alert_detail</description>
                     </tags>
                     <triggers>
                         <trigger>
-                            <uuid>e9463c9fcf5946849448a073e76b9dad</uuid>
+                            <uuid>b0183db41f034c8fa3ad4f749a52c486</uuid>
                             <expression>last(/Starlink dish by Prom/starlink.state,#1)&lt;&gt;last(/Starlink dish by Prom/starlink.state,#2) and length(last(/Starlink dish by Prom/starlink.state))&gt;0</expression>
                             <name>Starlink status has changed</name>
                             <opdata>Current value: {ITEM.LASTVALUE1}</opdata>
@@ -608,7 +608,7 @@ python dish_grpc_prometheus.py status alert_detail</description>
                     </triggers>
                 </item>
                 <item>
-                    <uuid>c18e526aed604bf7a2502d6efeb2dbd0</uuid>
+                    <uuid>f6ea20e1bc604cafb7c4300925ffaf79</uuid>
                     <name>Starlink status alert install pending</name>
                     <type>DEPENDENT</type>
                     <key>starlink.status_alert_install_pending</key>
@@ -642,7 +642,7 @@ python dish_grpc_prometheus.py status alert_detail</description>
                     </tags>
                     <triggers>
                         <trigger>
-                            <uuid>edec9b5b817e4cf687701de47007560a</uuid>
+                            <uuid>578929dde94549659a57520995fb08b0</uuid>
                             <expression>last(/Starlink dish by Prom/starlink.status_alert_install_pending,#3)=1</expression>
                             <name>Starlink alert install pending</name>
                             <opdata>Current value: {ITEM.LASTVALUE1}</opdata>
@@ -659,7 +659,7 @@ python dish_grpc_prometheus.py status alert_detail</description>
                     </triggers>
                 </item>
                 <item>
-                    <uuid>aa12312edbcd4492842d82e9eeda1102</uuid>
+                    <uuid>70039b3e83ae4925bc5080f420a5c80f</uuid>
                     <name>Starlink status alert is heating</name>
                     <type>DEPENDENT</type>
                     <key>starlink.status_alert_is_heating</key>
@@ -693,7 +693,7 @@ python dish_grpc_prometheus.py status alert_detail</description>
                     </tags>
                     <triggers>
                         <trigger>
-                            <uuid>25641a352af24131b3893b9e1c0b233f</uuid>
+                            <uuid>2c690fef667e440aab916c09f5a8048b</uuid>
                             <expression>last(/Starlink dish by Prom/starlink.status_alert_is_heating,#3)=1</expression>
                             <name>Starlink alert Terminal is heating</name>
                             <opdata>Current value: {ITEM.LASTVALUE1}</opdata>
@@ -710,7 +710,7 @@ python dish_grpc_prometheus.py status alert_detail</description>
                     </triggers>
                 </item>
                 <item>
-                    <uuid>8c9c5740f6a44194aa900c0ce814ec9a</uuid>
+                    <uuid>73b21049f05c49a1898576a2a1bf4862</uuid>
                     <name>Starlink status alert mast not near vertical</name>
                     <type>DEPENDENT</type>
                     <key>starlink.status_alert_mast_not_near_vertical</key>
@@ -744,7 +744,7 @@ python dish_grpc_prometheus.py status alert_detail</description>
                     </tags>
                     <triggers>
                         <trigger>
-                            <uuid>f7a1b0477b8f49f3909cc576fa10e538</uuid>
+                            <uuid>aa040da2bde7443aa7758e2399658721</uuid>
                             <expression>last(/Starlink dish by Prom/starlink.status_alert_mast_not_near_vertical,#3)=1</expression>
                             <name>Starlink alert Terminal mast not near vertical</name>
                             <opdata>Current value: {ITEM.LASTVALUE1}</opdata>
@@ -761,7 +761,7 @@ python dish_grpc_prometheus.py status alert_detail</description>
                     </triggers>
                 </item>
                 <item>
-                    <uuid>59e70ac5817c47539faf31520f006f0f</uuid>
+                    <uuid>62e0e982ccfb4a20b43ef53711a89789</uuid>
                     <name>Starlink status alert motors stuck</name>
                     <type>DEPENDENT</type>
                     <key>starlink.status_alert_motors_stuck</key>
@@ -795,7 +795,7 @@ python dish_grpc_prometheus.py status alert_detail</description>
                     </tags>
                     <triggers>
                         <trigger>
-                            <uuid>b66764a0d2134e3594c9d57d921d9adc</uuid>
+                            <uuid>acda701a8ea64655973a0b9eaa80a712</uuid>
                             <expression>last(/Starlink dish by Prom/starlink.status_alert_motors_stuck,#3)=1</expression>
                             <name>Starlink alert motors stuck</name>
                             <opdata>Current value: {ITEM.LASTVALUE1}</opdata>
@@ -812,7 +812,7 @@ python dish_grpc_prometheus.py status alert_detail</description>
                     </triggers>
                 </item>
                 <item>
-                    <uuid>3641e7bd10a04c26a0fd0af5e3accd4b</uuid>
+                    <uuid>1b10108eeddd4399ae7f914c7f8f45f0</uuid>
                     <name>Starlink status alert power supply thermal throttle</name>
                     <type>DEPENDENT</type>
                     <key>starlink.status_alert_power_supply_thermal_throttle</key>
@@ -846,7 +846,7 @@ python dish_grpc_prometheus.py status alert_detail</description>
                     </tags>
                 </item>
                 <item>
-                    <uuid>f68010ffc7fb4e4dbde0615c15742473</uuid>
+                    <uuid>b321f8adabe844f699783c3394ba853d</uuid>
                     <name>Starlink status alert roaming</name>
                     <type>DEPENDENT</type>
                     <key>starlink.status_alert_roaming</key>
@@ -879,7 +879,7 @@ python dish_grpc_prometheus.py status alert_detail</description>
                     </tags>
                 </item>
                 <item>
-                    <uuid>4bfb8451c498430ca6096b1f0664146f</uuid>
+                    <uuid>4e207a6d05774f7a90698a71da9c75bb</uuid>
                     <name>Starlink status alert slow ethernet speeds</name>
                     <type>DEPENDENT</type>
                     <key>starlink.status_alert_slow_ethernet_speeds</key>
@@ -913,7 +913,7 @@ python dish_grpc_prometheus.py status alert_detail</description>
                     </tags>
                 </item>
                 <item>
-                    <uuid>db23e9e99b044c08b6cafd348641edff</uuid>
+                    <uuid>119d5b1b3cbc471c9537b0829c7f684d</uuid>
                     <name>Starlink status alert thermal shutdown</name>
                     <type>DEPENDENT</type>
                     <key>starlink.status_alert_thermal_shutdown</key>
@@ -947,7 +947,7 @@ python dish_grpc_prometheus.py status alert_detail</description>
                     </tags>
                 </item>
                 <item>
-                    <uuid>476b7247f00943459dbc7d037d638572</uuid>
+                    <uuid>4a0e383386924374b872f9c58a4ee24d</uuid>
                     <name>Starlink status alert thermal throttle</name>
                     <type>DEPENDENT</type>
                     <key>starlink.status_alert_thermal_throttle</key>
@@ -981,7 +981,7 @@ python dish_grpc_prometheus.py status alert_detail</description>
                     </tags>
                 </item>
                 <item>
-                    <uuid>00d2adff4695424a80190faa3f3e2094</uuid>
+                    <uuid>9c82af0d0ca842d58af8900965180a8e</uuid>
                     <name>Starlink status alert unexpected location</name>
                     <type>DEPENDENT</type>
                     <key>starlink.status_alert_unexpected_location</key>
@@ -1015,7 +1015,7 @@ python dish_grpc_prometheus.py status alert_detail</description>
                     </tags>
                 </item>
                 <item>
-                    <uuid>e821907cee9043be9551bf20b1474261</uuid>
+                    <uuid>7580b2be8f08453ea2278c02563cc363</uuid>
                     <name>Starlink uplink throughput bps</name>
                     <type>DEPENDENT</type>
                     <key>starlink.uplink</key>
@@ -1048,7 +1048,7 @@ python dish_grpc_prometheus.py status alert_detail</description>
                     </tags>
                 </item>
                 <item>
-                    <uuid>8fef4b5a184a4e2cab742579b8e8afda</uuid>
+                    <uuid>a3cfc1f2d4fb489186c4ffe36deb4d15</uuid>
                     <name>Starlink uptime</name>
                     <type>DEPENDENT</type>
                     <key>starlink.uptime</key>
@@ -1079,7 +1079,7 @@ Starlink uptime in 'N days, hh:mm:ss' format.</description>
                     </tags>
                     <triggers>
                         <trigger>
-                            <uuid>3fd0350a29424341af74b5881b1d643c</uuid>
+                            <uuid>b42247251e8445548c91f5905150bba6</uuid>
                             <expression>last(/Starlink dish by Prom/starlink.uptime)&lt;10m</expression>
                             <name>{HOST.NAME} has been restarted (uptime &lt; 10m)</name>
                             <priority>WARNING</priority>
@@ -1095,7 +1095,7 @@ Starlink uptime in 'N days, hh:mm:ss' format.</description>
                     </triggers>
                 </item>
                 <item>
-                    <uuid>3aec8770da25433894375567f462198c</uuid>
+                    <uuid>409fcb071af043fba2cee959bc8e738d</uuid>
                     <name>Starlink: Get dish data</name>
                     <type>HTTP_AGENT</type>
                     <key>zbx.starlink.dish.data</key>
@@ -1111,7 +1111,7 @@ Starlink uptime in 'N days, hh:mm:ss' format.</description>
                     </tags>
                     <triggers>
                         <trigger>
-                            <uuid>afc72267acea44b2b0e64c0b5b395328</uuid>
+                            <uuid>b107d8c7e5a64713950a08c0ca3f6d9d</uuid>
                             <expression>nodata(/Starlink dish by Prom/zbx.starlink.dish.data,30)=1</expression>
                             <name>starlink_exporter is not available (or no data for 30m)</name>
                             <priority>HIGH</priority>
@@ -1149,7 +1149,7 @@ Starlink uptime in 'N days, hh:mm:ss' format.</description>
             </macros>
             <dashboards>
                 <dashboard>
-                    <uuid>64292779e2c7434a8c564d26eea641f5</uuid>
+                    <uuid>ead79e00b29742e0a5a618b172d9ea28</uuid>
                     <name>Starlink status</name>
                     <pages>
                         <page>
@@ -1357,7 +1357,7 @@ Starlink uptime in 'N days, hh:mm:ss' format.</description>
                     </pages>
                 </dashboard>
                 <dashboard>
-                    <uuid>b6d426b686094c37b36efc1031251fce</uuid>
+                    <uuid>c54863c738f34a87bf99765f09f2a273</uuid>
                     <name>Starlink traffic</name>
                     <pages>
                         <page>
@@ -1384,7 +1384,7 @@ Starlink uptime in 'N days, hh:mm:ss' format.</description>
             </dashboards>
             <valuemaps>
                 <valuemap>
-                    <uuid>75fd4eaac403425db5e525a5d5cb0910</uuid>
+                    <uuid>dc6979ec9b0241ec88ded324b31661d0</uuid>
                     <name>Starlink alert</name>
                     <mappings>
                         <mapping>
@@ -1398,7 +1398,7 @@ Starlink uptime in 'N days, hh:mm:ss' format.</description>
                     </mappings>
                 </valuemap>
                 <valuemap>
-                    <uuid>16eac092ee7d43e2a8ded1b88f2a85c9</uuid>
+                    <uuid>4a65c42c56b0475fb85e5b6d4bc09ff5</uuid>
                     <name>Starlink alerts codes</name>
                     <mappings>
                         <mapping>
@@ -1468,8 +1468,98 @@ Starlink uptime in 'N days, hh:mm:ss' format.</description>
     </templates>
     <graphs>
         <graph>
-            <uuid>1dd50c5d5d504c7d8540fd15323eee58</uuid>
+            <uuid>a62700a80a6d4b21894f3314d8cf5886</uuid>
             <name>Starlink alerts</name>
+            <show_work_period>NO</show_work_period>
+            <show_triggers>NO</show_triggers>
+            <graph_items>
+                <graph_item>
+                    <drawtype>BOLD_LINE</drawtype>
+                    <color>199C0D</color>
+                    <calc_fnc>ALL</calc_fnc>
+                    <item>
+                        <host>Starlink dish by Prom</host>
+                        <key>starlink.status_alert_install_pending</key>
+                    </item>
+                </graph_item>
+                <graph_item>
+                    <sortorder>1</sortorder>
+                    <drawtype>BOLD_LINE</drawtype>
+                    <color>F63100</color>
+                    <calc_fnc>ALL</calc_fnc>
+                    <item>
+                        <host>Starlink dish by Prom</host>
+                        <key>starlink.status_alert_is_heating</key>
+                    </item>
+                </graph_item>
+                <graph_item>
+                    <sortorder>2</sortorder>
+                    <color>2774A4</color>
+                    <calc_fnc>ALL</calc_fnc>
+                    <item>
+                        <host>Starlink dish by Prom</host>
+                        <key>starlink.status_alert_mast_not_near_vertical</key>
+                    </item>
+                </graph_item>
+                <graph_item>
+                    <sortorder>3</sortorder>
+                    <color>F7941D</color>
+                    <calc_fnc>ALL</calc_fnc>
+                    <item>
+                        <host>Starlink dish by Prom</host>
+                        <key>starlink.status_alert_motors_stuck</key>
+                    </item>
+                </graph_item>
+                <graph_item>
+                    <sortorder>4</sortorder>
+                    <color>FC6EA3</color>
+                    <calc_fnc>ALL</calc_fnc>
+                    <item>
+                        <host>Starlink dish by Prom</host>
+                        <key>starlink.status_alert_power_supply_thermal_throttle</key>
+                    </item>
+                </graph_item>
+                <graph_item>
+                    <sortorder>5</sortorder>
+                    <color>6C59DC</color>
+                    <calc_fnc>ALL</calc_fnc>
+                    <item>
+                        <host>Starlink dish by Prom</host>
+                        <key>starlink.status_alert_roaming</key>
+                    </item>
+                </graph_item>
+                <graph_item>
+                    <sortorder>6</sortorder>
+                    <color>C7A72D</color>
+                    <calc_fnc>ALL</calc_fnc>
+                    <item>
+                        <host>Starlink dish by Prom</host>
+                        <key>starlink.status_alert_slow_ethernet_speeds</key>
+                    </item>
+                </graph_item>
+                <graph_item>
+                    <sortorder>7</sortorder>
+                    <color>BA2A5D</color>
+                    <calc_fnc>ALL</calc_fnc>
+                    <item>
+                        <host>Starlink dish by Prom</host>
+                        <key>starlink.status_alert_thermal_shutdown</key>
+                    </item>
+                </graph_item>
+                <graph_item>
+                    <sortorder>8</sortorder>
+                    <color>F230E0</color>
+                    <calc_fnc>ALL</calc_fnc>
+                    <item>
+                        <host>Starlink dish by Prom</host>
+                        <key>starlink.status_alert_thermal_throttle</key>
+                    </item>
+                </graph_item>
+            </graph_items>
+        </graph>
+        <graph>
+            <uuid>edfad2b074e3422aae2b72df24e0e33a</uuid>
+            <name>Starlink alerts codes</name>
             <show_work_period>NO</show_work_period>
             <show_triggers>NO</show_triggers>
             <graph_items>
@@ -1485,7 +1575,7 @@ Starlink uptime in 'N days, hh:mm:ss' format.</description>
             </graph_items>
         </graph>
         <graph>
-            <uuid>d191cc79ec7441f79f8eb0e0cc0dcb92</uuid>
+            <uuid>b8947e2d724e413a991741a5b724a80d</uuid>
             <name>Starlink ping</name>
             <graph_items>
                 <graph_item>
@@ -1510,7 +1600,7 @@ Starlink uptime in 'N days, hh:mm:ss' format.</description>
             </graph_items>
         </graph>
         <graph>
-            <uuid>6a797f94eb3d40b19785a70c201d4e4e</uuid>
+            <uuid>dd687a38760a41578e7996ef955c19ff</uuid>
             <name>Starlink traffic</name>
             <graph_items>
                 <graph_item>
