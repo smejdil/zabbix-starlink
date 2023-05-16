@@ -28,7 +28,7 @@ exec_in_screen "starlink" "/usr/local/bin/exporter_starlink.sh"
 cat /usr/local/bin/exporter_starlink.sh
 
 cd /root/starlink-grpc-tools
-/usr/local/bin/python3.9 dish_grpc_prometheus.py status
+/usr/local/bin/python3.9 dish_grpc_prometheus.py status alert_detail
 ```
 
 ### Running with Docker
