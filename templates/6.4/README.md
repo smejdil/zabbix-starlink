@@ -3,16 +3,20 @@
 
 ## Overview
 
-For Zabbix version: 6.0 and higher  
-The template to monitor Starlink dish by Zabbix that work with any external starlink-grpc-tools.
+For Zabbix version: 6.0 and higher. The template to monitor Starlink dish by Zabbix that work with external
+Python project [starlink-grpc-tools](https://github.com/sparky8512/starlink-grpc-tools).
 
 This template was tested on:
 
-- starlink-grpc-tools in FreeBSD and Docker version starlink-grpc-tools.
+- Install starlink-grpc-tools in FreeBSD and Docker version starlink-grpc-tools.
 
 ## Setup
 
-- 
+- Running Python script as service
+
+```console
+python dish_grpc_prometheus.py status alert_detail
+```
 
 ## Zabbix configuration
 
@@ -45,7 +49,7 @@ There are no template links in this template.
 |Starlink |Starlink status alert thermal throttle|<p>Alert corresponding with bit 2 (bit mask 4) in *alerts*.</p>| DEPENDENT |starlink.status_alert_thermal_throttle<p>**Preprocessing**:</p><p>- PROMETHEUS_PATTERN: `starlink_status_alert_thermal_throttle`</p>|
 |Starlink |Starlink status alert thermal shutdown|<p>Alert corresponding with bit 1 (bit mask 2) in *alerts*.</p>| DEPENDENT |starlink.status_alert_thermal_shutdown<p>**Preprocessing**:</p><p>- PROMETHEUS_PATTERN: `starlink_status_alert_thermal_shutdown`</p>|
 |Starlink |Starlink status alert slow ethernet speeds|<p>Alert corresponding with bit 5 (bit mask 32) in *alerts*.</p>| DEPENDENT |starlink.status_alert_slow_ethernet_speeds<p>**Preprocessing**:</p><p>- PROMETHEUS_PATTERN: `starlink_status_alert_slow_ethernet_speeds`</p>|
-|Starlink |Starlink status alert roaming|<p></p>| DEPENDENT |starlink.status_alert_roaming<p>**Preprocessing**:</p><p>- PROMETHEUS_PATTERN: `starlink_status_alert_roaming`</p>|
+|Starlink |Starlink status alert roaming|<p>Alert corresponding with bit 6 (bit mask 64) in *alerts*.</p>| DEPENDENT |starlink.status_alert_roaming<p>**Preprocessing**:</p><p>- PROMETHEUS_PATTERN: `starlink_status_alert_roaming`</p>|
 |Starlink |Starlink status alert power supply thermal throttle|<p>Alert corresponding with bit 9 (bit mask 512) in *alerts*.</p>| DEPENDENT |starlink.status_alert_power_supply_thermal_throttle<p>**Preprocessing**:</p><p>- PROMETHEUS_PATTERN: `starlink_status_alert_power_supply_thermal_throttle`</p>|
 |Starlink |Starlink status alert motors stuck|<p>Alert corresponding with bit 0 (bit mask 1) in *alerts*.</p>| DEPENDENT |starlink.status_alert_motors_stuck<p>**Preprocessing**:</p><p>- PROMETHEUS_PATTERN: `starlink_status_alert_motors_stuck`</p>|
 |Starlink |Starlink status alert mast not near vertical|<p>Alert corresponding with bit 4 (bit mask 16) in *alerts*.</p>| DEPENDENT |starlink.status_alert_mast_not_near_vertical<p>**Preprocessing**:</p><p>- PROMETHEUS_PATTERN: `starlink_status_alert_mast_not_near_vertical`</p>|
