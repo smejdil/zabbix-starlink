@@ -1,7 +1,7 @@
 {
     "zabbix_export": {
         "version": "6.0",
-        "date": "2023-05-16T19:46:49Z",
+        "date": "2023-05-17T06:48:05Z",
         "groups": [
             {
                 "uuid": "7df96b18c230490a9a0a9e2307226338",
@@ -10,7 +10,7 @@
         ],
         "templates": [
             {
-                "uuid": "e2ad303926fd4dde825d4ecc3c5842a5",
+                "uuid": "f6055f57986b400cb905dda680b8bfc4",
                 "template": "Starlink dish by Prom",
                 "name": "Starlink dish by Prom",
                 "description": "Use project Python starlink-grpc-tools\n\nhttps://github.com/sparky8512/starlink-grpc-tools\n\nRun Starlink exporter:\npython dish_grpc_prometheus.py status alert_detail",
@@ -21,7 +21,7 @@
                 ],
                 "items": [
                     {
-                        "uuid": "490191c0b03b48eaa06c028dca4cf77a",
+                        "uuid": "23a75a484aa242ebbe8aa8ce7906d1f4",
                         "name": "Starlink alerts",
                         "type": "DEPENDENT",
                         "key": "starlink.alerts",
@@ -56,7 +56,7 @@
                         ],
                         "triggers": [
                             {
-                                "uuid": "97349d6f7d794f17b74e17f6c0c76d1a",
+                                "uuid": "a1ad84cb677045f293f2f66af9b9fd54",
                                 "expression": "last(/Starlink dish by Prom/starlink.alerts,#3)>0",
                                 "name": "Starlink alert",
                                 "opdata": "Current value: {ITEM.LASTVALUE1}",
@@ -79,7 +79,7 @@
                         ]
                     },
                     {
-                        "uuid": "9babc02e28b44ed7a93ed16aac7091fd",
+                        "uuid": "36d845fb88a84524b4077a9bc8f15c76",
                         "name": "Starlink currently obstructed",
                         "type": "DEPENDENT",
                         "key": "starlink.currently_obstructed",
@@ -111,7 +111,7 @@
                         ]
                     },
                     {
-                        "uuid": "89fcc63a1d6b4a2f902bb9370dd96b37",
+                        "uuid": "19b29b8ef1fc427196567abcd314efea",
                         "name": "Starlink direction azimuth",
                         "type": "DEPENDENT",
                         "key": "starlink.direction_azimuth",
@@ -139,7 +139,7 @@
                         ]
                     },
                     {
-                        "uuid": "eb6b9ca7f7a741d8aecd97cc062ff4c1",
+                        "uuid": "fb43d683ef274e65b75bd9afa349f933",
                         "name": "Starlink direction elevation",
                         "type": "DEPENDENT",
                         "key": "starlink.direction_elevation",
@@ -167,7 +167,7 @@
                         ]
                     },
                     {
-                        "uuid": "a88255d0cb2d4850b2914582c482ad5e",
+                        "uuid": "52bab1a4b4cf4f99bd99019ef612c7b2",
                         "name": "Starlink downlink throughput bps",
                         "type": "DEPENDENT",
                         "key": "starlink.downlink",
@@ -200,7 +200,7 @@
                         ]
                     },
                     {
-                        "uuid": "e5862f11edfc46348c960d951c4ee8e3",
+                        "uuid": "bfe3d4b905bf42a1a8d9d7a7b8f8f5ef",
                         "name": "Starlink fraction obstructed",
                         "type": "DEPENDENT",
                         "key": "starlink.fraction_obstructed",
@@ -232,7 +232,7 @@
                         ]
                     },
                     {
-                        "uuid": "9815ec77c1f243f083d8dfd3e53217d8",
+                        "uuid": "4173e1a5a24647d5a52354ee5fce84b3",
                         "name": "Starlink hardware version",
                         "type": "DEPENDENT",
                         "key": "starlink.hardware_version",
@@ -262,7 +262,7 @@
                         ]
                     },
                     {
-                        "uuid": "fa460ab4092044ab83b65fe17416bdaa",
+                        "uuid": "0975b98eb75c4f1ba94fded1c8587bd0",
                         "name": "Starlink ID",
                         "type": "DEPENDENT",
                         "key": "starlink.id",
@@ -292,7 +292,7 @@
                         ]
                     },
                     {
-                        "uuid": "656285cd14374820950a977b98510a04",
+                        "uuid": "9b40dcf1fdd5436c92270cc3723cbf9b",
                         "name": "Starlink obstruction duration",
                         "type": "DEPENDENT",
                         "key": "starlink.obstruction_duration",
@@ -320,7 +320,7 @@
                         ]
                     },
                     {
-                        "uuid": "fd3fa332f00d4e16837344206d81fb84",
+                        "uuid": "db795f37aa7543298ed90da5f86ab238",
                         "name": "Starlink obstruction interval",
                         "type": "DEPENDENT",
                         "key": "starlink.obstruction_interval",
@@ -348,7 +348,7 @@
                         ]
                     },
                     {
-                        "uuid": "d2229efd6feb4672b924868aedbbe820",
+                        "uuid": "ccd54bdcee33414eb4a75340bb4a248c",
                         "name": "Starlink ping latency",
                         "type": "DEPENDENT",
                         "key": "starlink.ping_latency",
@@ -380,7 +380,7 @@
                         ]
                     },
                     {
-                        "uuid": "888d48d2b78f42fc953dedf11748b9da",
+                        "uuid": "93fafdf8d72f42868dc1e9a75a8d6ebf",
                         "name": "Starlink pop ping drop rate",
                         "type": "DEPENDENT",
                         "key": "starlink.pop_ping_drop_rate",
@@ -412,7 +412,7 @@
                         ]
                     },
                     {
-                        "uuid": "b60f01823e744c7e865d2f190d316e26",
+                        "uuid": "47cd286176814f5ea46ca016083c16f9",
                         "name": "Starlink seconds obstructed",
                         "type": "DEPENDENT",
                         "key": "starlink.seconds_obstructed",
@@ -444,7 +444,7 @@
                         ]
                     },
                     {
-                        "uuid": "49a99e518203462f96db1561a962d15f",
+                        "uuid": "d9a2dadd53b04cab990a018c1423a6fd",
                         "name": "Starlink seconds to first nonempty slot",
                         "type": "DEPENDENT",
                         "key": "starlink.seconds_to_first_nonempty_slot",
@@ -472,7 +472,7 @@
                         ]
                     },
                     {
-                        "uuid": "a8829e876b384bd990a606b6b3372dd8",
+                        "uuid": "e6773890986e49b9b8276f1072b0d64e",
                         "name": "Starlink snr above noise floor",
                         "type": "DEPENDENT",
                         "key": "starlink.snr_above_noise_floor",
@@ -500,7 +500,7 @@
                         ]
                     },
                     {
-                        "uuid": "7f3b4ec2a24e4b298443ac32513f71ff",
+                        "uuid": "87e7b5bf4eff4124a844e9e23507bc8f",
                         "name": "Starlink software version",
                         "type": "DEPENDENT",
                         "key": "starlink.software_version",
@@ -530,7 +530,7 @@
                         ],
                         "triggers": [
                             {
-                                "uuid": "65bf2fbf9f91455caf8ce134e8c4e020",
+                                "uuid": "7e4096730de54400be0339925823520c",
                                 "expression": "last(/Starlink dish by Prom/starlink.software_version,#1)<>last(/Starlink dish by Prom/starlink.software_version,#2) and length(last(/Starlink dish by Prom/starlink.software_version))>0",
                                 "name": "Starlink firmware has changed",
                                 "opdata": "Current value: {ITEM.LASTVALUE1}",
@@ -551,7 +551,7 @@
                         ]
                     },
                     {
-                        "uuid": "d3289c7e982f40629cbdc70b87ea9c78",
+                        "uuid": "8088d0e95ad042d09b237176470c7a6f",
                         "name": "Starlink state",
                         "type": "DEPENDENT",
                         "key": "starlink.state",
@@ -580,7 +580,7 @@
                         ],
                         "triggers": [
                             {
-                                "uuid": "2a6f7a117193430c8f48ddae6d684118",
+                                "uuid": "f8f20063cab947bc8543499b810bece7",
                                 "expression": "last(/Starlink dish by Prom/starlink.state,#1)<>last(/Starlink dish by Prom/starlink.state,#2) and length(last(/Starlink dish by Prom/starlink.state))>0",
                                 "name": "Starlink status has changed",
                                 "opdata": "Current value: {ITEM.LASTVALUE1}",
@@ -597,7 +597,7 @@
                         ]
                     },
                     {
-                        "uuid": "ae00dfb889df4c36b8b6d9e0cbc1c1a1",
+                        "uuid": "e2e7a46a5ea04091a4fd67734536eeac",
                         "name": "Starlink status alert install pending",
                         "type": "DEPENDENT",
                         "key": "starlink.status_alert_install_pending",
@@ -631,7 +631,7 @@
                         ],
                         "triggers": [
                             {
-                                "uuid": "8efae24e732b484b95d2667a3a3ea4a1",
+                                "uuid": "5150a68a99c84bee83eac7fd788e6745",
                                 "expression": "last(/Starlink dish by Prom/starlink.status_alert_install_pending,#3)=1",
                                 "name": "Starlink alert install pending",
                                 "opdata": "Current value: {ITEM.LASTVALUE1}",
@@ -648,7 +648,7 @@
                         ]
                     },
                     {
-                        "uuid": "505a92c291594a23bb6b13d58e208206",
+                        "uuid": "0e6993064aa744c7b6048bfb6c8c7c9b",
                         "name": "Starlink status alert is heating",
                         "type": "DEPENDENT",
                         "key": "starlink.status_alert_is_heating",
@@ -682,7 +682,7 @@
                         ],
                         "triggers": [
                             {
-                                "uuid": "0dedc446bd0846ebbea627a589b8ecc8",
+                                "uuid": "d4446b9885844f348897bcb5df522f91",
                                 "expression": "last(/Starlink dish by Prom/starlink.status_alert_is_heating,#3)=1",
                                 "name": "Starlink alert Terminal is heating",
                                 "opdata": "Current value: {ITEM.LASTVALUE1}",
@@ -699,7 +699,7 @@
                         ]
                     },
                     {
-                        "uuid": "ff2b1738b347415cb00b64f69141cd83",
+                        "uuid": "c00dcd92c1824d88902418f65bbc5faa",
                         "name": "Starlink status alert mast not near vertical",
                         "type": "DEPENDENT",
                         "key": "starlink.status_alert_mast_not_near_vertical",
@@ -733,7 +733,7 @@
                         ],
                         "triggers": [
                             {
-                                "uuid": "b20ee4e790e44154a9afcf57ad3f8b09",
+                                "uuid": "9032a63d5aef462ba0b76160a10922a3",
                                 "expression": "last(/Starlink dish by Prom/starlink.status_alert_mast_not_near_vertical,#3)=1",
                                 "name": "Starlink alert Terminal mast not near vertical",
                                 "opdata": "Current value: {ITEM.LASTVALUE1}",
@@ -750,7 +750,7 @@
                         ]
                     },
                     {
-                        "uuid": "938388689d834266a0c202486f5b7058",
+                        "uuid": "c7432a9bf7fc4a6e9250b6f71d02bdfc",
                         "name": "Starlink status alert motors stuck",
                         "type": "DEPENDENT",
                         "key": "starlink.status_alert_motors_stuck",
@@ -784,7 +784,7 @@
                         ],
                         "triggers": [
                             {
-                                "uuid": "abc8d6d7f5144bacb369344b213c8025",
+                                "uuid": "866110f20aab42cf88d161ed25cc2261",
                                 "expression": "last(/Starlink dish by Prom/starlink.status_alert_motors_stuck,#3)=1",
                                 "name": "Starlink alert motors stuck",
                                 "opdata": "Current value: {ITEM.LASTVALUE1}",
@@ -801,7 +801,7 @@
                         ]
                     },
                     {
-                        "uuid": "9431c27ce3ef4a739d319a05c4f9c096",
+                        "uuid": "5f71a14067ea444684d24356eea2a8fb",
                         "name": "Starlink status alert power supply thermal throttle",
                         "type": "DEPENDENT",
                         "key": "starlink.status_alert_power_supply_thermal_throttle",
@@ -835,11 +835,12 @@
                         ]
                     },
                     {
-                        "uuid": "9437b1912305448e9d6de16fa2fb12fc",
+                        "uuid": "bcac577ec68245e6a258302534f2acde",
                         "name": "Starlink status alert roaming",
                         "type": "DEPENDENT",
                         "key": "starlink.status_alert_roaming",
                         "delay": "0",
+                        "description": "Alert corresponding with bit 6 (bit mask 64) in *alerts*.",
                         "valuemap": {
                             "name": "Starlink alert"
                         },
@@ -868,7 +869,7 @@
                         ]
                     },
                     {
-                        "uuid": "7ef258bbc4c649f1bf436d1d3e3b1e42",
+                        "uuid": "9860f65e08b646bfaa1bc3ffe9ad1b77",
                         "name": "Starlink status alert slow ethernet speeds",
                         "type": "DEPENDENT",
                         "key": "starlink.status_alert_slow_ethernet_speeds",
@@ -902,7 +903,7 @@
                         ]
                     },
                     {
-                        "uuid": "c0719099ba8c42f3a6a2a12243707b12",
+                        "uuid": "8b1dfc3c63fd44f59155a3174fafd940",
                         "name": "Starlink status alert thermal shutdown",
                         "type": "DEPENDENT",
                         "key": "starlink.status_alert_thermal_shutdown",
@@ -936,7 +937,7 @@
                         ]
                     },
                     {
-                        "uuid": "5ebb2ab444014c7481f5abd64a9854c8",
+                        "uuid": "9d33ef5ce4894116a585297ef13d8579",
                         "name": "Starlink status alert thermal throttle",
                         "type": "DEPENDENT",
                         "key": "starlink.status_alert_thermal_throttle",
@@ -970,7 +971,7 @@
                         ]
                     },
                     {
-                        "uuid": "1d1544e17a384cc092555450c4eb7039",
+                        "uuid": "50124293ef7f48dab0892cdf580b78d9",
                         "name": "Starlink status alert unexpected location",
                         "type": "DEPENDENT",
                         "key": "starlink.status_alert_unexpected_location",
@@ -1004,7 +1005,7 @@
                         ]
                     },
                     {
-                        "uuid": "80008c2c74a840cb97ebc3e5f70a2127",
+                        "uuid": "9471928fa80440c4afd9f4a25e3203bd",
                         "name": "Starlink uplink throughput bps",
                         "type": "DEPENDENT",
                         "key": "starlink.uplink",
@@ -1037,7 +1038,7 @@
                         ]
                     },
                     {
-                        "uuid": "39895f7a994748c39fef2316364a9c34",
+                        "uuid": "2a63882f6458498993adcc2883cbafda",
                         "name": "Starlink uptime",
                         "type": "DEPENDENT",
                         "key": "starlink.uptime",
@@ -1066,7 +1067,7 @@
                         ],
                         "triggers": [
                             {
-                                "uuid": "a1825c75525848479fd164b46886bb67",
+                                "uuid": "4608a14b970746c7902c2034e7b8374c",
                                 "expression": "last(/Starlink dish by Prom/starlink.uptime)<10m",
                                 "name": "{HOST.NAME} has been restarted (uptime < 10m)",
                                 "priority": "WARNING",
@@ -1082,7 +1083,7 @@
                         ]
                     },
                     {
-                        "uuid": "dc52b491b439466f9c2a51618fb886c1",
+                        "uuid": "7a4b25cffa4040858c0026ca1beb73fd",
                         "name": "Starlink: Get dish data",
                         "type": "HTTP_AGENT",
                         "key": "zbx.starlink.dish.data",
@@ -1099,7 +1100,7 @@
                         ],
                         "triggers": [
                             {
-                                "uuid": "56fca6652a25412199f69cb1d09e55ec",
+                                "uuid": "756bd2aa891b40d79df8795638f30d60",
                                 "expression": "nodata(/Starlink dish by Prom/zbx.starlink.dish.data,30)=1",
                                 "name": "starlink_exporter is not available (or no data for 30m)",
                                 "priority": "HIGH",
@@ -1137,7 +1138,7 @@
                 ],
                 "dashboards": [
                     {
-                        "uuid": "851c6c055ddb43e9908103abe9d54402",
+                        "uuid": "ba6c008bf8ad4ca2973501188824689e",
                         "name": "Starlink status",
                         "pages": [
                             {
@@ -1345,7 +1346,7 @@
                         ]
                     },
                     {
-                        "uuid": "868f261f9c594fd5907f486390e1fde1",
+                        "uuid": "2194f8109a73498d8206ce5904c94469",
                         "name": "Starlink traffic",
                         "pages": [
                             {
@@ -1372,7 +1373,7 @@
                 ],
                 "valuemaps": [
                     {
-                        "uuid": "0016f90239ca4adfbcf020a665fc51c3",
+                        "uuid": "a943017fbebb4b72a885dd7e17a5530a",
                         "name": "Starlink alert",
                         "mappings": [
                             {
@@ -1386,7 +1387,7 @@
                         ]
                     },
                     {
-                        "uuid": "1041e6f2a9194d29a5ef9d1a5b331a55",
+                        "uuid": "4b05a06f34934b05a048c64d5dd12097",
                         "name": "Starlink alerts codes",
                         "mappings": [
                             {
@@ -1456,7 +1457,7 @@
         ],
         "graphs": [
             {
-                "uuid": "8a6676b22243435fb9338f774dd63170",
+                "uuid": "e1fcb0b355d242f0acebad9c74a63f4a",
                 "name": "Starlink alerts",
                 "show_work_period": "NO",
                 "show_triggers": "NO",
@@ -1553,7 +1554,7 @@
                 ]
             },
             {
-                "uuid": "da3945762fa045b6a6de3efe4c3ce997",
+                "uuid": "372a22ccff854c5cb92b038debf536b8",
                 "name": "Starlink alerts codes",
                 "show_work_period": "NO",
                 "show_triggers": "NO",
@@ -1570,7 +1571,7 @@
                 ]
             },
             {
-                "uuid": "5f5b09de88ee42eabf6c713470e46ffb",
+                "uuid": "eae4f9fcfc304441bde0224582153bc5",
                 "name": "Starlink ping",
                 "graph_items": [
                     {
@@ -1595,7 +1596,7 @@
                 ]
             },
             {
-                "uuid": "09ebcd4bb22d419bac27941d1ffb27bf",
+                "uuid": "9c5acfc4e0ad4d62aa3644de07550373",
                 "name": "Starlink traffic",
                 "graph_items": [
                     {
