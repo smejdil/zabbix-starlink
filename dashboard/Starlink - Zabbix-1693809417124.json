@@ -1,4 +1,47 @@
 {
+  "__inputs": [
+    {
+      "name": "DS_ZABBIX_ENCELADUS",
+      "label": "Zabbix Enceladus",
+      "description": "",
+      "type": "datasource",
+      "pluginId": "alexanderzobnin-zabbix-datasource",
+      "pluginName": "Zabbix"
+    }
+  ],
+  "__elements": {},
+  "__requires": [
+    {
+      "type": "datasource",
+      "id": "alexanderzobnin-zabbix-datasource",
+      "name": "Zabbix",
+      "version": "1.0.0"
+    },
+    {
+      "type": "panel",
+      "id": "gauge",
+      "name": "Gauge",
+      "version": ""
+    },
+    {
+      "type": "grafana",
+      "id": "grafana",
+      "name": "Grafana",
+      "version": "9.5.5"
+    },
+    {
+      "type": "panel",
+      "id": "stat",
+      "name": "Stat",
+      "version": ""
+    },
+    {
+      "type": "panel",
+      "id": "timeseries",
+      "name": "Time series",
+      "version": ""
+    }
+  ],
   "annotations": {
     "list": [
       {
@@ -19,14 +62,14 @@
   "editable": true,
   "fiscalYearStartMonth": 0,
   "graphTooltip": 0,
-  "id": 15,
+  "id": null,
   "links": [],
   "liveNow": false,
   "panels": [
     {
       "datasource": {
         "type": "alexanderzobnin-zabbix-datasource",
-        "uid": "d52a3810-c683-40be-b08c-927e468c934b"
+        "uid": "${DS_ZABBIX_ENCELADUS}"
       },
       "description": "",
       "fieldConfig": {
@@ -143,7 +186,7 @@
           "countTriggersBy": "",
           "datasource": {
             "type": "alexanderzobnin-zabbix-datasource",
-            "uid": "d52a3810-c683-40be-b08c-927e468c934b"
+            "uid": "${DS_ZABBIX_ENCELADUS}"
           },
           "evaltype": "0",
           "functions": [],
@@ -195,7 +238,7 @@
           "countTriggersBy": "",
           "datasource": {
             "type": "alexanderzobnin-zabbix-datasource",
-            "uid": "d52a3810-c683-40be-b08c-927e468c934b"
+            "uid": "${DS_ZABBIX_ENCELADUS}"
           },
           "evaltype": "0",
           "functions": [],
@@ -248,7 +291,7 @@
     {
       "datasource": {
         "type": "alexanderzobnin-zabbix-datasource",
-        "uid": "d52a3810-c683-40be-b08c-927e468c934b"
+        "uid": "${DS_ZABBIX_ENCELADUS}"
       },
       "description": "",
       "fieldConfig": {
@@ -361,7 +404,7 @@
           "countTriggersBy": "",
           "datasource": {
             "type": "alexanderzobnin-zabbix-datasource",
-            "uid": "d52a3810-c683-40be-b08c-927e468c934b"
+            "uid": "${DS_ZABBIX_ENCELADUS}"
           },
           "evaltype": "0",
           "functions": [],
@@ -413,7 +456,7 @@
           "countTriggersBy": "",
           "datasource": {
             "type": "alexanderzobnin-zabbix-datasource",
-            "uid": "d52a3810-c683-40be-b08c-927e468c934b"
+            "uid": "${DS_ZABBIX_ENCELADUS}"
           },
           "evaltype": "0",
           "functions": [],
@@ -460,13 +503,13 @@
           }
         }
       ],
-      "title": "Actual Throughput",
+      "title": "Availability",
       "type": "timeseries"
     },
     {
       "datasource": {
         "type": "alexanderzobnin-zabbix-datasource",
-        "uid": "d52a3810-c683-40be-b08c-927e468c934b"
+        "uid": "${DS_ZABBIX_ENCELADUS}"
       },
       "fieldConfig": {
         "defaults": {
@@ -521,7 +564,7 @@
           "countTriggersBy": "",
           "datasource": {
             "type": "alexanderzobnin-zabbix-datasource",
-            "uid": "d52a3810-c683-40be-b08c-927e468c934b"
+            "uid": "${DS_ZABBIX_ENCELADUS}"
           },
           "evaltype": "0",
           "functions": [],
@@ -574,7 +617,7 @@
     {
       "datasource": {
         "type": "alexanderzobnin-zabbix-datasource",
-        "uid": "d52a3810-c683-40be-b08c-927e468c934b"
+        "uid": "${DS_ZABBIX_ENCELADUS}"
       },
       "fieldConfig": {
         "defaults": {
@@ -629,7 +672,7 @@
           "countTriggersBy": "",
           "datasource": {
             "type": "alexanderzobnin-zabbix-datasource",
-            "uid": "d52a3810-c683-40be-b08c-927e468c934b"
+            "uid": "${DS_ZABBIX_ENCELADUS}"
           },
           "evaltype": "0",
           "functions": [],
@@ -681,7 +724,7 @@
     {
       "datasource": {
         "type": "alexanderzobnin-zabbix-datasource",
-        "uid": "d52a3810-c683-40be-b08c-927e468c934b"
+        "uid": "${DS_ZABBIX_ENCELADUS}"
       },
       "fieldConfig": {
         "defaults": {
@@ -736,7 +779,7 @@
           "countTriggersBy": "",
           "datasource": {
             "type": "alexanderzobnin-zabbix-datasource",
-            "uid": "d52a3810-c683-40be-b08c-927e468c934b"
+            "uid": "${DS_ZABBIX_ENCELADUS}"
           },
           "evaltype": "0",
           "functions": [],
@@ -788,7 +831,7 @@
     {
       "datasource": {
         "type": "alexanderzobnin-zabbix-datasource",
-        "uid": "d52a3810-c683-40be-b08c-927e468c934b"
+        "uid": "${DS_ZABBIX_ENCELADUS}"
       },
       "fieldConfig": {
         "defaults": {
@@ -843,7 +886,7 @@
           "countTriggersBy": "",
           "datasource": {
             "type": "alexanderzobnin-zabbix-datasource",
-            "uid": "d52a3810-c683-40be-b08c-927e468c934b"
+            "uid": "${DS_ZABBIX_ENCELADUS}"
           },
           "evaltype": "0",
           "functions": [],
@@ -895,7 +938,7 @@
     {
       "datasource": {
         "type": "alexanderzobnin-zabbix-datasource",
-        "uid": "d52a3810-c683-40be-b08c-927e468c934b"
+        "uid": "${DS_ZABBIX_ENCELADUS}"
       },
       "description": "",
       "fieldConfig": {
@@ -1023,7 +1066,7 @@
           "countTriggersBy": "",
           "datasource": {
             "type": "alexanderzobnin-zabbix-datasource",
-            "uid": "d52a3810-c683-40be-b08c-927e468c934b"
+            "uid": "${DS_ZABBIX_ENCELADUS}"
           },
           "evaltype": "0",
           "functions": [],
@@ -1075,7 +1118,7 @@
           "countTriggersBy": "",
           "datasource": {
             "type": "alexanderzobnin-zabbix-datasource",
-            "uid": "d52a3810-c683-40be-b08c-927e468c934b"
+            "uid": "${DS_ZABBIX_ENCELADUS}"
           },
           "evaltype": "0",
           "functions": [],
@@ -1122,13 +1165,13 @@
           }
         }
       ],
-      "title": "Actual Throughput",
+      "title": "Obstructuion",
       "type": "timeseries"
     },
     {
       "datasource": {
         "type": "alexanderzobnin-zabbix-datasource",
-        "uid": "d52a3810-c683-40be-b08c-927e468c934b"
+        "uid": "${DS_ZABBIX_ENCELADUS}"
       },
       "description": "",
       "fieldConfig": {
@@ -1256,7 +1299,7 @@
           "countTriggersBy": "",
           "datasource": {
             "type": "alexanderzobnin-zabbix-datasource",
-            "uid": "d52a3810-c683-40be-b08c-927e468c934b"
+            "uid": "${DS_ZABBIX_ENCELADUS}"
           },
           "evaltype": "0",
           "functions": [],
@@ -1302,13 +1345,13 @@
           }
         }
       ],
-      "title": "Actual Throughput",
+      "title": "Latency",
       "type": "timeseries"
     },
     {
       "datasource": {
         "type": "alexanderzobnin-zabbix-datasource",
-        "uid": "d52a3810-c683-40be-b08c-927e468c934b"
+        "uid": "${DS_ZABBIX_ENCELADUS}"
       },
       "fieldConfig": {
         "defaults": {
@@ -1363,7 +1406,7 @@
           "countTriggersBy": "",
           "datasource": {
             "type": "alexanderzobnin-zabbix-datasource",
-            "uid": "d52a3810-c683-40be-b08c-927e468c934b"
+            "uid": "${DS_ZABBIX_ENCELADUS}"
           },
           "evaltype": "0",
           "functions": [],
@@ -1428,6 +1471,6 @@
   "timezone": "",
   "title": "Starlink - Zabbix",
   "uid": "ec4cc1b4-9893-4815-89ae-ee4f108a3549",
-  "version": 10,
+  "version": 11,
   "weekStart": ""
 }
